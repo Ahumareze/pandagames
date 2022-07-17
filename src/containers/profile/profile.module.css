@@ -1,0 +1,115 @@
+.container{
+    min-height: 100vh;
+    width: 100%;
+    overflow-y: scroll;
+   
+}
+.main{
+    width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+@media (max-width: 520px) {
+    .main{
+        width: 100%;
+    }
+}
+.image{
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #FCD535;
+    margin-right: auto;
+    margin-left: auto;
+}
+.addPhotoText{
+    font-size: 16px;
+    color: rgb(38, 38, 255);
+    margin: 0;
+    margin-top: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+.main input{
+    display: none;
+}
+.fullname{
+    font-size: 20px;
+    text-align: center;
+    font-weight: 500;
+    margin: 0;
+    margin-top: 10px;
+    opacity: 0.9;
+}
+.email{
+    font-style: 16px;
+    margin: 0;
+    text-align: center;
+    margin-top: 5px;
+    opacity: 0.7;
+}
+.settings{
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+    padding-top: 10px;
+}
+.settings h3{
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+    opacity: 0.8;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+.item{
+    height: 60px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 40px 1fr 20px;
+    grid-gap: 10px;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 7px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.iconContainer, .icon3, .icon2, .icon4{
+    height: 40px;
+    width: 40px;
+    border-radius: 5px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(221, 221, 255);
+    color: rgb(93, 93, 255);
+    font-size: 22px;
+}
+.icon3{
+    background-color: rgb(255, 226, 153);
+    color: rgb(206, 218, 32);
+}
+.icon2{
+    background-color: rgb(255, 189, 189);
+    color: #ff5656;
+}
+.icon4{
+    background-color: rgb(155, 255, 155);
+    color: rgb(15, 197, 15);
+}
+.item p{
+    font-size: 18px;
+    margin: 0;
+    opacity: 0.8;
+}
+.chevron{
+    font-size: 25px;
+    opacity: 0.3;
+}

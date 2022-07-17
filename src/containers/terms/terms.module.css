@@ -1,0 +1,43 @@
+.container{
+    padding-top: 100px;
+}
+.container h2{
+    margin: 0;
+    font-size: 22px;
+    font-weight: 500;
+    text-transform: capitalize;
+    text-align: center;
+}
+.container h2 span{
+    color: var(--purple);
+}
+.intro{
+    font-size: 16px;
+    opacity: 0.8;
+    width: 800px;
+    margin: 0;
+    margin-top: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.intro p{
+    margin: 0;
+    margin-bottom: 10px;
+}
+.main{
+    width: 700px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 30px;
+}
+@media (max-width: 830px) {
+    .intro{
+        width: calc(100vw - 30px);
+    }
+    .main{
+        display: block;
+        width: 100%;
+        padding: 30px 15px;
+        box-sizing: border-box;
+    }
+}

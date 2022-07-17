@@ -1,0 +1,85 @@
+.container{
+    height: calc(100vh - 70px);
+    margin-top: 70px;
+    width: 100vw;
+    background-color: #bebebe;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.main{
+    height: 100%;
+    width: 100vw;
+    background-color: rgba(0,0,0,0.6);
+    box-sizing: border-box;
+    padding: 20px 100px;
+    display: grid;
+    align-items: center;
+}
+.main h1{
+    margin: 0;
+    font-weight: 600;
+    color: #fff;
+    width: 700px;
+    margin-bottom: 20px;
+}
+.main p{
+    margin: 0;
+    color: #fff;
+    opacity: 0.8;
+    width: 700px;
+    font-size: 18px;
+}
+.getStartedInput{
+    height: 40px;
+    width: 400px;
+    /* border: 1px solid #fff; */
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 150px;
+    grid-gap: 10px;
+}
+.button{
+    height: 100%;
+    width: 100%;
+    background-color: var(--purple);
+    color: #000;
+    font-size: 17px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 5px 7px rgba(0,0,0,0.2);
+    padding: 0;
+}
+.getStartedInput input{
+    height: 100%;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    padding-left: 10px;
+}
+.getStartedInput input:focus, .getStartedInput input:hover{
+    outline: 1px solid var(--purple);
+}
+@media (max-width: 950px) {
+    .main{
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .main h1{
+        width: 100%;
+    }
+    .main p{
+        width: 100%;
+    }
+    .getStartedInput{
+        width: 100%;
+        overflow: hidden;
+        grid-template-columns: 1fr 120px;
+    }
+}
