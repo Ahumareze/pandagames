@@ -5,17 +5,15 @@ import './App.css';
 
 //components
 import {Route, Routes} from 'react-router-dom';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { useEffect } from 'react';
 
-import { Store } from './containers';
+import { Home } from './pages';
 
 
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path='/store' element={<Store />} />
+        <Route path='/' element={<Home />} />
       </Routes>
     </div>
   );

@@ -1,0 +1,5 @@
+.container{
+    background: var(--linearPurple);
+    height: 100vh;
+    width: 100vw;
+}

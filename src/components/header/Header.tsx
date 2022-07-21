@@ -1,9 +1,9 @@
 import React from 'react';
 
 //styles
-import classes from './store.module.css';
+import classes from './header.module.css';
 
-function Store() {
+function Header() {
     return (
         <div className={classes.container}>
             
@@ -11,4 +11,4 @@ function Store() {
     );
 }
 
-export default Store;
+export default Header;

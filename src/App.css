@@ -1,6 +1,7 @@
 .App {
   overflow: hidden;
-  background-color: #fafafa;
+  margin: 0;
+  padding: 0;
 }
 .Mobile{
   height: 100vh;
@@ -15,5 +16,5 @@
   font-size: 18px;
 }
 :root{
-  --purple: #FCD535;
+  --linearPurple: linear-gradient(119.1deg, #0C0B25 0.59%, #06051A 84.57%);
 }
