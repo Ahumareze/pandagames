@@ -1,3 +1,11 @@
 .container{
     overflow: hidden;
+    height: 100vh;
+    overflow-y: scroll;
+}
+section{
+    width: 1100px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 60px;
 }

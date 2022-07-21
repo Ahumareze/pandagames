@@ -1,0 +1,27 @@
+.container{
+    height: 400px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 700px 1fr;
+    column-gap: 15px;
+}
+.banner{
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+    background-color: var(--primary);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+.backdrop{
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+}
+.linksContainer{
+    height: 100%;
+    width: 100%;
+    border: 1px solid #fff;
+}

@@ -1,7 +1,74 @@
+.header{
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+}
 .container{
-    height: 70px;
-    width: 800px;
-    border: 1px solid #fff;
+    padding-top: 20px;
+    width: 1100px;
     margin-right: auto;
     margin-left: auto;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+}
+.logoContainer{
+    height: 100%;
+    width: 100%;
+    color: rgba(255, 255, 255, 0.918);
+    font-size: 20px;
+    font-weight: 900;
+    -webkit-text-stroke: 1px blueviolet;
+}
+.secondContainer{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    column-gap: 60px;
+    align-items: center;
+    justify-content: flex-end;
+}
+.links{
+    width: fit-content;
+    margin: 0;
+    color: var(--links);
+    font-size: 16px;
+    cursor: pointer;
+}
+.links:hover{
+    color: var(--blueWhite);
+}
+.searhBar{
+    height: 40px;
+    width: fit-content;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+}
+.searhBar input{
+    height: 100%;
+    width: 300px;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--primary);
+    box-sizing: border-box;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+    padding-left: 20px;
+}
+.searhBar .searchButton{
+    height: 100%;
+    width: 60px;
+    background-color: var(--primary);
+    border-radius: 20px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    color: var(--blueWhite);
+}
+.searhBar input:hover, .searchButton:hover, .searhBar input:focus{
+    outline: none;
+    background-color: var(--secondary);
 }
