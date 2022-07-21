@@ -6,6 +6,7 @@ import classes from './home.module.css';
 //components
 import { Background, Header } from '../../components';
 import Collections from './components/collections/Collections';
+import Categories from './components/categories/Categories';
 
 function Home() {
     return (
@@ -14,6 +15,7 @@ function Home() {
                 <Header />
                 <section>
                     <Collections />
+                    <Categories />
                 </section>
             </div>
         </Background>

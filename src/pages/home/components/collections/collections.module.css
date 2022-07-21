@@ -25,14 +25,13 @@
     align-content: flex-end;
 }
 .main{
-    /* background-color: red; */
     height: fit-content;
 }
-.backdrop h2{
+.backdrop h2, .animate h2{
     color: #fff;
     margin: 0;
 }
-.backdrop p{
+.backdrop p, .animate p{
     margin: 0;
     color: #fff;
     opacity: 0.8;
@@ -54,7 +53,7 @@
     margin-top: 20px;
 }
 .backdrop .button:hover{
-    background-color: aliceblue;
+    background-color: rgb(173, 217, 255);
 }
 .linksContainer{
     height: 100%;
@@ -74,6 +73,9 @@
     padding: 10px;
     box-sizing: border-box;
     cursor: pointer;
+}
+.activeItem{
+    background-color: var(--primary);
 }
 .Item:hover{
     animation: scaleUp 0.7s ease forwards;
@@ -98,4 +100,25 @@
     font-size: 17px;
     color: #fff;
     opacity: 0.6;
+}
+.animate p{
+    animation: animateP 0.9s ease forwards;
+}
+.animate h2{
+    animation: animateH2 0.7s ease forwards;
+}
+.animate .button{
+    animation: animateButton 1.2s ease forwards;
+}
+@keyframes animateP {
+    0%{transform: translateY(200px);}
+    100%{transform: translateY(0);}
+}
+@keyframes animateButton {
+    0%{transform: translateY(200px);}
+    100%{transform: translateY(0);}
+}
+@keyframes animateH2 {
+    0%{transform: translateY(200px);}
+    100%{transform: translateY(0);}
 }

@@ -13,7 +13,7 @@ function Collections() {
     const [selected, setSelected] = useState<number>(0)
 
     useEffect(() => {
-        setActive(collections[3])
+        setActive(collections[0])
     }, []);
 
     const updateBanner = (e: number) => {
