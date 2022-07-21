@@ -2,7 +2,7 @@
     height: 400px;
     width: 100%;
     display: grid;
-    grid-template-columns: 700px 1fr;
+    grid-template-columns: 750px 1fr;
     column-gap: 15px;
 }
 .banner{
@@ -18,10 +18,84 @@
 .backdrop{
     height: 100%;
     width: 100%;
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+    padding: 30px;
+    box-sizing: border-box;
+    display: grid;
+    align-content: flex-end;
+}
+.main{
+    /* background-color: red; */
+    height: fit-content;
+}
+.backdrop h2{
+    color: #fff;
+    margin: 0;
+}
+.backdrop p{
+    margin: 0;
+    color: #fff;
+    opacity: 0.8;
+    width: 370px;
+    padding: 15px 0;
+    line-height: 150%;
+}
+.backdrop .button{
+    width: fit-content;
+    background-color: #fff;
+    height: 40px;
+    padding: 0px 20px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.backdrop .button:hover{
+    background-color: aliceblue;
 }
 .linksContainer{
     height: 100%;
     width: 100%;
-    border: 1px solid #fff;
+    display: grid;
+    grid-template-rows: repeat(4, 80px);
+    row-gap: 20px;
+}
+.Item{
+    height: 80px;
+    width: 100%;
+    background-color: #0a0929;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    column-gap: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.Item:hover{
+    animation: scaleUp 0.7s ease forwards;
+}
+@keyframes scaleUp {
+    0%{transform: scale(1);}
+    100%{transform: scale(1.05); background-color: var(--primary);}
+}
+.itemImage{
+    height: 100%;
+    width: 50px;
+    border-radius: 7px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.itemTextContainer{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    font-size: 17px;
+    color: #fff;
+    opacity: 0.6;
 }
