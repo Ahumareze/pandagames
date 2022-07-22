@@ -1,9 +1,17 @@
 import React from 'react';
+
+//icons
 import { FiChevronRight } from 'react-icons/fi';
+
+//components
 import { Game } from '../../../../components';
 
 //styles
 import classes from './categories.module.css';
+
+//data
+import games from '../../../../assets/data/games';
+
 
 function Categories() {
     return (
@@ -19,10 +27,14 @@ function Categories() {
             </div>
 
             <div className={classes.gamesContainer}>
-                <Game />
-                <Game />
-                <Game />
-                <Game />
+                {games.map((i, idx) => (
+                    <Game
+                        title={i.title}
+                        image={i.image}
+                        price={i.price}
+                        key={idx}
+                    />
+                ))}
             </div>
         </div>
     );

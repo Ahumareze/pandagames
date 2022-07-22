@@ -1,7 +1,19 @@
 .container{
-    height: 250px;
+    height: fit-content;
     width: 100%;
-    border: 1px solid #fff;
+    cursor: pointer;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 10px;
+    padding-bottom: 15px;
+    border-radius: 13px;
+}
+.container:hover{
+    animation: scaleUp 0.5s ease forwards;
+}
+@keyframes scaleUp {
+    0%{transform: scale(1);}
+    100%{transform: scale(1.02); background-color: var(--primary);}
 }
 .container .mainImage{
     height: 150px;
@@ -17,4 +29,33 @@
     font-family: sans-serif;
     margin-top: 10px;
     opacity: 0.9;
+}
+.extraTags{
+    height: fit-content;
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+.price{
+    width: fit-content;
+    color: #F4900C;
+    font-size: 17px;
+}
+.platforms{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 10px;
+    align-items: center;
+}
+.platforms img{
+    width: 20px;
+    opacity: 0.5;
+}
+.platforms img:hover{
+    opacity: 0.8;
 }
