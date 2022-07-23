@@ -33,7 +33,7 @@ const mainCollections:Array<MainCollections> = [
         link: '/sports'
     },
     {
-        name: 'Role playing',
+        name: 'Role-playing',
         image: role_playing,
         link: '/role-playing'
     },
