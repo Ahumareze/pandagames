@@ -33,6 +33,7 @@ function Categories() {
                         image={i.image}
                         price={i.price}
                         key={idx}
+                        id={i.id}
                     />
                 ))}
             </div>

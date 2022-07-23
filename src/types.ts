@@ -31,13 +31,15 @@ export interface MainCollections{
 export interface Games{
     title: string,
     image: string,
-    price: number
+    price: number,
+    id: number
 };
 
 export interface GameProps{
     title: string,
     image: string,
     price: number,
+    id: number
 }
 
 export interface CollectionItemProps{

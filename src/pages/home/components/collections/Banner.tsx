@@ -6,9 +6,6 @@ import { BannerProps } from '../../../../types';
 //styles
 import classes from './collections.module.css';
 
-//data
-import collections from '../../../../assets/data/collections';
-
 const Banner:FC<BannerProps> = ({title, image, details}) => {
     const [animate, setAnimate] = useState<boolean>(true);
 

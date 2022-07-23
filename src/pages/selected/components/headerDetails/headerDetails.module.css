@@ -1,0 +1,41 @@
+.container h2{
+    font-size: 20px;
+    color: #fff;
+    font-weight: 500;
+    font-family: sans-serif;
+    margin: 0;
+    opacity: 0.9;
+    text-transform: capitalize;
+}
+.details{
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    color: #fff;
+    gap: 30px;
+    align-items: center;
+}
+.starsContainer{
+    height: 20px;
+    width: fit-content;
+    font-size: 18px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    opacity: 0.7;
+}
+.unstared{
+    font-size: 17px;
+}
+.genre, .age{
+    font-size: 16px;
+    margin: 0;
+    opacity: 0.7;
+}
+.genre{
+    cursor: pointer;
+}
+.genre:hover{
+    opacity: 0.9;
+}

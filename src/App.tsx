@@ -6,7 +6,7 @@ import './App.css';
 //components
 import {Route, Routes} from 'react-router-dom';
 
-import { Home, Collections, Collection } from './pages';
+import { Home, Collections, Collection, Selected } from './pages';
 
 
 function App() {
@@ -16,6 +16,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/collections/' element={<Collections />} />
         <Route path='/collections/:id' element={<Collection />} />
+        <Route path='/games/:id' element={<Selected />} />
       </Routes>
     </div>
   );

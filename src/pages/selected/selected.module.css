@@ -1,0 +1,24 @@
+.container{
+    overflow: hidden;
+    height: 100vh;
+    overflow-y: scroll;
+}
+.section{
+    width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px;
+    padding-bottom: 50px;
+    display: grid;
+    grid-template-columns: 600px 1fr;
+    gap: 30px;
+}
+.container h2{
+    font-size: 20px;
+    color: #fff;
+    font-weight: 500;
+    font-family: sans-serif;
+    margin: 0;
+    opacity: 0.9;
+    text-transform: capitalize;
+}

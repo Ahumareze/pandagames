@@ -29,6 +29,7 @@ function Collection() {
                             image={i.image}
                             price={i.price}
                             key={idx}
+                            id={i.id}
                         />
                     ))}
                     </div>
