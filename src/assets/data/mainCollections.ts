@@ -12,5 +12,44 @@ import strategy from '../devImages/collections/strategy.jpg';
 import stimulation from '../devImages/collections/stimulation.jpg';
 
 const mainCollections:Array<MainCollections> = [
-    {}
+    {
+        name: 'Action',
+        image: action,
+        link: '/action'
+    },
+    {
+        name: 'Adventure',
+        image: adventure,
+        link: '/adventure'
+    },
+    {
+        name: 'Multiplayer',
+        image: multiplayer,
+        link: '/action'
+    },
+    {
+        name: 'Action',
+        image: action,
+        link: '/action'
+    },
+    {
+        name: 'Action',
+        image: action,
+        link: '/action'
+    },
+    {
+        name: 'Action',
+        image: action,
+        link: '/action'
+    },
+    {
+        name: 'Action',
+        image: action,
+        link: '/action'
+    },
+    {
+        name: 'Action',
+        image: action,
+        link: '/action'
+    }
 ]
