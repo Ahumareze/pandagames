@@ -1,7 +1,7 @@
-import Store from "./store/Store";
 import Home from "./home/Home";
+import Collections from "./collections/Collections";
 
 export {
-    Store,
-    Home
+    Home,
+    Collections
 }

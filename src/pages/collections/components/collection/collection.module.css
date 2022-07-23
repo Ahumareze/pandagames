@@ -1,0 +1,31 @@
+.container{
+    width: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 10px;
+    padding-bottom: 15px;
+    border-radius: 13px;
+}
+.container:hover{
+    animation: scaleUp 0.5s ease forwards;
+}
+@keyframes scaleUp {
+    0%{transform: scale(1);}
+    100%{transform: scale(1.02); background-color: var(--primary);}
+}
+.container img{
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.container .title{
+    color: #fff;
+    font-size: 17px;
+    margin: 0;
+    font-weight: 500;
+    font-family: sans-serif;
+    margin-top: 10px;
+    opacity: 0.8;
+}

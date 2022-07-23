@@ -8,13 +8,17 @@ import { Background, Header } from '../../components';
 import Collections from './components/collections/Collections';
 import Categories from './components/categories/Categories';
 
+//utilities
+import { home } from '../../utilities/links';
+
 function Home() {
     return (
-        <Background>
+        <Background bubbles explore={false}>
             <div className={classes.container}>
-                <Header />
+                <Header active={home} />
                 <section>
                     <Collections />
+                    <Categories />
                     <Categories />
                 </section>
             </div>

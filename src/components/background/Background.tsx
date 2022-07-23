@@ -1,16 +1,44 @@
 import React, { FC } from 'react';
 
+//types
+import { BackgroundProps } from '../../types';
+
 //styles
 import classes from './background.module.css';
 
-interface backgroundProps{
-    children: any
-}
+//assets
+import exploreImage from '../../assets/images/EXPLORE.png'
 
-const Background:FC<backgroundProps> = ({children}) => {
+
+const Background:FC<BackgroundProps> = ({children, bubbles, explore}) => {
+
+    const animation = (
+        <div className={classes.bubbles}>
+            <div />
+            <div />
+            <div />
+            <div />
+            <div />
+            <div />
+            <div />
+            <div />
+            <div />
+        </div>
+    );
+
+    const exploreContainer = (
+        <div className={classes.explore}>
+            <img alt='' src={exploreImage} />
+        </div>
+    )
+    
     return (
         <div className={classes.container}>
-            {children}
+            {bubbles && animation}
+            {explore && exploreContainer}
+            <div className={classes.main}>
+                {children}
+            </div>
         </div>
     );
 }

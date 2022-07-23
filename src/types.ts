@@ -1,4 +1,12 @@
-import { StringMappingType } from "typescript"
+export interface HeaderProps{
+    active: string
+}
+
+export interface BackgroundProps{
+    children: any,
+    bubbles: boolean,
+    explore: boolean
+}
 
 export interface Collections{
     title: string,
@@ -7,6 +15,12 @@ export interface Collections{
     miniImage: string,
     details: string
 };
+
+export interface MainCollections{
+    name: string,
+    image: string,
+    link: string
+}
 
 export interface Games{
     title: string,
