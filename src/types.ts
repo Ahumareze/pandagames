@@ -16,6 +16,12 @@ export interface Collections{
     details: string
 };
 
+export interface CollectionProps{
+    name: string,
+    image: string,
+    link: string
+}
+
 export interface MainCollections{
     name: string,
     image: string,

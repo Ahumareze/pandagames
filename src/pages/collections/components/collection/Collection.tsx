@@ -1,16 +1,25 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 //styles
 import classes from './collection.module.css';
 
-//images
-import banner from '../../../../assets/devImages/banners/b1.jpg';
+//types
+import { CollectionProps } from '../../../../types';
 
-function Collection() {
+//components
+import { useNavigate } from 'react-router-dom';
+
+const Collection:FC<CollectionProps> = ({name, image, link}):JSX.Element => {
+    const navigate = useNavigate();
+
+    const handleNavigate = () => {
+        navigate('/collections' + link)
+    }
+
     return (
-        <div className={classes.container}>
-            <img src={banner} alt='' />
-            <p className={classes.title}>Action</p>
+        <div className={classes.container} onClick={() => handleNavigate()}>
+            <img src={image} alt='' />
+            <p className={classes.title}>{name}</p>
         </div>
     );
 }

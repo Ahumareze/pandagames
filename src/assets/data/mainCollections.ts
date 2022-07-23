@@ -9,7 +9,7 @@ import racing from '../devImages/collections/racing.jpg';
 import role_playing from '../devImages/collections/role-playing.jpg';
 import sports from '../devImages/collections/sports.jpg';
 import strategy from '../devImages/collections/strategy.jpg';
-import stimulation from '../devImages/collections/stimulation.jpg';
+import simulation from '../devImages/collections/stimulation.jpg';
 
 const mainCollections:Array<MainCollections> = [
     {
@@ -25,31 +25,33 @@ const mainCollections:Array<MainCollections> = [
     {
         name: 'Multiplayer',
         image: multiplayer,
-        link: '/action'
+        link: '/multiplayer'
     },
     {
-        name: 'Action',
-        image: action,
-        link: '/action'
+        name: 'Sports',
+        image: sports,
+        link: '/sports'
     },
     {
-        name: 'Action',
-        image: action,
-        link: '/action'
+        name: 'Role playing',
+        image: role_playing,
+        link: '/role-playing'
     },
     {
-        name: 'Action',
-        image: action,
-        link: '/action'
+        name: 'Strategy',
+        image: strategy,
+        link: '/strategy'
     },
     {
-        name: 'Action',
-        image: action,
-        link: '/action'
+        name: 'Racing',
+        image: racing,
+        link: '/racing'
     },
     {
-        name: 'Action',
-        image: action,
-        link: '/action'
+        name: 'Simulation',
+        image: simulation,
+        link: '/simulation'
     }
-]
+];
+
+export default mainCollections;
