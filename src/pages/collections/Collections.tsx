@@ -22,7 +22,7 @@ function Collections() {
                 <Header active={collections} />
                 <section>
                     <div  className={classes.intro}>
-                        <h2>Explore our well sorted game collections</h2>
+                        <h2>Explore our well sorted game collections 🎮</h2>
                         <p >Browse from our list of different games genres from action games to play with family and friends to role-playing games to play alone </p>
                     </div>
 
