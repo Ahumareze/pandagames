@@ -1,5 +1,42 @@
 .container{
-    height: 300px;
     width: 100%;
-    border: 1px solid #fff;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.bannerImage{
+    object-fit: cover;
+    height: 350px;
+    width: 100%;
+    border-radius: 15px;
+    background-color: var(--secondary);
+}
+.miniImages{
+    padding-top: 20px;
+    width: 100%;
+    display: grid;
+    justify-content: center;
+}
+.mainImagesContainer{
+    height: fit-content;
+    width: fit-content;
+    /* border: 1px solid #fff; */
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.mainImagesContainer img{
+    height: 50px;
+    width: 90px;
+    background-color: var(--primary);
+    border-radius: 7px;
+    object-fit: cover;
+    cursor: pointer;
+    opacity: 0.3;
+}
+.mainImagesContainer img:hover{
+    animation: scaleUp 0.5s ease forwards;
+}
+@keyframes scaleUp {
+    0%{transform: scale(1);}
+    100%{transform: scale(1.02); opacity: 1;}
 }

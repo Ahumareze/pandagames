@@ -22,3 +22,45 @@
     opacity: 0.9;
     text-transform: capitalize;
 }
+.details{
+    width: 100%;
+    padding: 20px 0;
+    border-top: 1px solid #3063c97e;
+}
+.details p{
+    margin: 0;
+    color: #fff;
+    opacity: 0.7;
+    font-size: 15px;
+    line-height: 150%;
+}
+.developers{
+    width: 100%;
+    padding: 20px 0;
+    border-top: 1px solid #3063c97e;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.developers .title{
+    font-size: 16px;
+    color: #D0E0FF;
+    opacity: 0.9;
+    margin: 0;
+    width: 100%;
+}
+.devStudios, .releaseDate{
+    width: 100%;
+    display: grid;
+    justify-content: flex-end;
+}
+.devStudios p, .releaseDate p{
+    margin: 0;
+    color: #D0E0FF;
+    opacity: 0.8;
+}
+.devStudios p{
+    cursor: pointer;
+}
+.devStudios p:hover{
+    color: #fff;
+}
