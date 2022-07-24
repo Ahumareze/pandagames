@@ -1,8 +1,11 @@
 import React from 'react';
 
+//styles
+import classes from './banners.module.css';
+
 function Banners() {
     return (
-        <div>
+        <div className={classes.container}>
             
         </div>
     );

@@ -9,6 +9,7 @@ import { collections } from '../../utilities/links';
 //components
 import { Background, Header } from '../../components';
 import HeaderDetails from './components/headerDetails/HeaderDetails';
+import Banners from './components/banners/Banners';
 
 function Selected() {
     return (
@@ -16,7 +17,10 @@ function Selected() {
             <div className={classes.container}>
                 <Header active={collections} />
                 <section className={classes.section}>
-                    <HeaderDetails />
+                    <div>
+                        <HeaderDetails />
+                        <Banners />
+                    </div>
                 </section>
             </div>
         </Background>
