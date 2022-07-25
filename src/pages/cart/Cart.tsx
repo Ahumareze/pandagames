@@ -8,6 +8,7 @@ import { cart } from '../../utilities/links';
 
 //components
 import { Background, Header } from '../../components';
+import { Item } from './components';
 
 function Cart() {
     return (
@@ -20,6 +21,7 @@ function Cart() {
                             <h2>My Cart</h2>
                             <p>Games added to cart till appear below</p>
                         </div>
+                        <Item />
                     </div>
                 </section>
             </div>
