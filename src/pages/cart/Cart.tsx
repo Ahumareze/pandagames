@@ -5,7 +5,7 @@ import classes from './cart.module.css';
 
 function Cart() {
     return (
-        <div>
+        <div className={classes.container}>
             
         </div>
     );
