@@ -14,6 +14,12 @@ function Cart() {
         <Background bubbles={false} explore={false}>
             <div className={classes.container}>
                 <Header active={cart} />
+                <section className={classes.section}>
+                    <div className={classes.cartContainer}>
+                        <h2>My Cart</h2>
+                        <p>Games added to cart till appear below</p>
+                    </div>
+                </section>
             </div>
         </Background>
     );

@@ -1,0 +1,31 @@
+.container{
+    overflow: hidden;
+    height: 100vh;
+    overflow-y: scroll;
+}
+.section{
+    width: 850px;
+    display: grid;
+    grid-template-columns: 520px 1fr;
+    gap: 30px;
+}
+.cartContainer{
+    height: 300px;
+    width: 100%;
+    border: 1px solid #fff;
+}
+.cartContainer h2{
+    font-size: 20px;
+    color: #fff;
+    font-weight: 500;
+    font-family: sans-serif;
+    margin: 0;
+    opacity: 0.9;
+    text-transform: capitalize;
+}
+.cartContainer p{
+    color: #fff;
+    opacity: 0.7;
+    margin: 0;
+    margin-top: 10px;
+}
