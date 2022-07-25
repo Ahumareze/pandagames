@@ -29,13 +29,13 @@ function Selected() {
                         </div>
                         <Platforms />
                         <div className={classes.developers}>
-                            <p className={classes.title}>Developers:</p>
+                            <p className={classes.title}>Developers</p>
                             <div className={classes.devStudios}>
                                 <p>Kurame Studios inc.</p>
                             </div>
                         </div>
                         <div className={classes.developers}>
-                            <p className={classes.title}>Release date:</p>
+                            <p className={classes.title}>Release date</p>
                             <div className={classes.releaseDate}>
                                 <p>July 14th, 2022</p>
                             </div>

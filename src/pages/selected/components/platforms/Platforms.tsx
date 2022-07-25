@@ -11,7 +11,7 @@ import windows from '../../../../assets/icons/windows.png';
 function Platforms() {
     return (
         <div className={classes.container}>
-            <p>Platforms:</p>
+            <p>Platforms</p>
             <div className={classes.icons}>
                 <img src={ps4} alt='' />
                 <img src={macos} alt='' />
