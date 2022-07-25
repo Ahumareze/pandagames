@@ -4,16 +4,18 @@ import React from 'react';
 import classes from './cart.module.css';
 
 //utilities
-import { collections } from '../../utilities/links';
+import { cart } from '../../utilities/links';
 
 //components
 import { Background, Header } from '../../components';
 
 function Cart() {
     return (
-        <div className={classes.container}>
-            
-        </div>
+        <Background bubbles={false} explore={false}>
+            <div className={classes.container}>
+                <Header active={cart} />
+            </div>
+        </Background>
     );
 }
 
