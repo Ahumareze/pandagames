@@ -7,7 +7,7 @@ import classes from './selected.module.css';
 import { collections } from '../../utilities/links';
 
 //components
-import { Background, Header } from '../../components';
+import { Background, Header, PrimaryButton, SecondaryButton } from '../../components';
 import HeaderDetails from './components/headerDetails/HeaderDetails';
 import Banners from './components/banners/Banners';
 import Platforms from './components/platforms/Platforms';
@@ -43,7 +43,11 @@ function Selected() {
                     </div>
 
                     <div className={classes.purchaseDiv}>
-
+                        <div className={classes.price}>$39.99</div>
+                        <div className={classes.buttonsContainer}>
+                            <PrimaryButton title={'buy now'} onClick={() => console.log('buy now')} />
+                            <SecondaryButton title={'add to cart'} onClick={() => console.log('add to cart')}/>
+                        </div>
                     </div>
                 </section>
             </div>

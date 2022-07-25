@@ -1,0 +1,37 @@
+.pContainer{
+    height: 44px;
+    width: 100%;
+    background: var(--button);
+    border-radius: 7px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #fff;
+    text-transform: capitalize;
+}
+.pContainer:hover{
+    animation: scaleUp 0.5s ease forwards;
+}
+@keyframes scaleUp {
+    100%{background: var(--buttonHover);}
+}
+.sContainer{
+    height: 43px;
+    width: 100%;
+    background: var(--background);
+    border: 1px solid var(--button);
+    border-radius: 7px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--button);
+    text-transform: capitalize;
+}
+.sContainer:hover{
+    animation: scaleUp2 0.5s ease forwards;
+}
+@keyframes scaleUp2 {
+    100%{background: var(--primary)}
+}

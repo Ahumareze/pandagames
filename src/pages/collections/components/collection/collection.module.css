@@ -19,6 +19,7 @@
     width: 100%;
     object-fit: cover;
     border-radius: 10px;
+    background-color: var(--primary);
 }
 .container .title{
     color: #fff;

@@ -54,4 +54,9 @@ export interface BannerProps{
     image: string,
     title: string,
     details: string
+};
+
+export interface ButtonProps{
+    title: string,
+    onClick: () => void
 }

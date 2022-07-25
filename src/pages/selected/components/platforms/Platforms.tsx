@@ -13,9 +13,9 @@ function Platforms() {
         <div className={classes.container}>
             <p>Platforms:</p>
             <div className={classes.icons}>
-                <img src={ps4} />
-                <img src={macos} />
-                <img src={windows} />
+                <img src={ps4} alt='' />
+                <img src={macos} alt='' />
+                <img src={windows} alt='' />
             </div>
         </div>
     );
