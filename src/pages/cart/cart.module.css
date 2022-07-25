@@ -14,7 +14,7 @@
     width: 100%;
     border: 1px solid #fff;
 }
-.cartContainer h2{
+.intro h2{
     font-size: 20px;
     color: #fff;
     font-weight: 500;
@@ -23,7 +23,7 @@
     opacity: 0.9;
     text-transform: capitalize;
 }
-.cartContainer p{
+.intro p{
     color: #fff;
     opacity: 0.7;
     margin: 0;

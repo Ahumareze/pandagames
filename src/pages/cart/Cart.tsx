@@ -16,8 +16,10 @@ function Cart() {
                 <Header active={cart} />
                 <section className={classes.section}>
                     <div className={classes.cartContainer}>
-                        <h2>My Cart</h2>
-                        <p>Games added to cart till appear below</p>
+                        <div className={classes.intro}>
+                            <h2>My Cart</h2>
+                            <p>Games added to cart till appear below</p>
+                        </div>
                     </div>
                 </section>
             </div>
