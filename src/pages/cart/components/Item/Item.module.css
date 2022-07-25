@@ -1,20 +1,47 @@
 .container{
     height: 120px;
     width: 100%;
-    background-color: #11102D;
+    background-color: var(--primary);
     border-radius: 10px;
     box-sizing: border-box;
     padding: 12px;
     display: grid;
     grid-template-columns: 170px 1fr 50px;
+    gap: 12px;
 }
 .mainImage{
     height: 100%;
     width: 100%;
-    background-color: var(--primary);
+    background-color: var(--secondary);
     border-radius: 7px;
     object-fit: cover;
 }
 .details{
-    
+    height: 100%;
+    width: 100%;
+    /* border: 1px solid #fff; */
+}
+.details h3{
+    color: #fff;
+    margin: 0;
+    font-weight: 500;
+    font-family: sans-serif;
+    opacity: 0.9;
+    font-size: 17px;
+}
+.details p{
+    color: #fff;
+    opacity: 0.8;
+    margin: 0;
+    margin-top: 7px;
+}
+.platforms{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.platforms img{
+    height: 16px;
+    color: #fff;
+    opacity: 0.6;
 }
