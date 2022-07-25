@@ -6,7 +6,7 @@
     box-sizing: border-box;
     padding: 12px;
     display: grid;
-    grid-template-columns: 170px 1fr 50px;
+    grid-template-columns: 170px 1fr 30px;
     gap: 12px;
 }
 .mainImage{
@@ -19,7 +19,8 @@
 .details{
     height: 100%;
     width: 100%;
-    /* border: 1px solid #fff; */
+    display: grid;
+    grid-template-rows: 1fr 17px;
 }
 .details h3{
     color: #fff;
@@ -41,7 +42,32 @@
     gap: 10px;
 }
 .platforms img{
-    height: 16px;
+    height: 17px;
     color: #fff;
     opacity: 0.6;
+}
+.platforms img:hover{
+    opacity: 0.8;
+}
+.delete{
+    height: 30px;
+    width: 30px;
+    border-radius: 20px;
+    /* background-color: var(--secondary); */
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #fff;
+    opacity: 0.5;
+    cursor: pointer;
+}
+.delete:hover{
+    animation: delete 0.5s ease forwards;
+}
+@keyframes delete {
+    100%{
+        opacity: 0.9;
+        background-color: var(--secondary);
+    }
 }

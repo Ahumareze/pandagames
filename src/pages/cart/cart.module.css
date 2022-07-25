@@ -28,5 +28,7 @@
     margin-top: 10px;
 }
 .gamesContainer{
-    padding-top: 30px;
+    padding-top: 40px;
+    display: grid;
+    gap: 20px;
 }
