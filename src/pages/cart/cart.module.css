@@ -10,9 +10,7 @@
     gap: 30px;
 }
 .cartContainer{
-    height: 300px;
     width: 100%;
-    border: 1px solid #fff;
 }
 .intro h2{
     font-size: 20px;
@@ -28,4 +26,7 @@
     opacity: 0.7;
     margin: 0;
     margin-top: 10px;
+}
+.gamesContainer{
+    padding-top: 30px;
 }

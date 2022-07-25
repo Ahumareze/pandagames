@@ -1,0 +1,17 @@
+.container{
+    height: 120px;
+    width: 100%;
+    background-color: #11102D;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 170px 1fr 50px;
+}
+.mainImage{
+    height: 100%;
+    width: 100%;
+    background-color: var(--primary);
+    border-radius: 7px;
+    object-fit: cover;
+}

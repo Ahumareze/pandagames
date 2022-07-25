@@ -21,7 +21,10 @@ function Cart() {
                             <h2>My Cart</h2>
                             <p>Games added to cart till appear below</p>
                         </div>
-                        <Item />
+                        
+                        <div className={classes.gamesContainer}>
+                            <Item />
+                        </div>
                     </div>
                 </section>
             </div>
