@@ -4,7 +4,7 @@
     background-color: #11102D;
     border-radius: 10px;
     box-sizing: border-box;
-    padding: 10px;
+    padding: 12px;
     display: grid;
     grid-template-columns: 170px 1fr 50px;
 }
@@ -14,4 +14,7 @@
     background-color: var(--primary);
     border-radius: 7px;
     object-fit: cover;
+}
+.details{
+    
 }

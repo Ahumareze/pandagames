@@ -9,7 +9,10 @@ import banner from '../../../../assets/devImages/games/genshin.jpg';
 function Item() {
     return (
         <div className={classes.container}>
-            <img className={classes.mainImage} />
+            <img className={classes.mainImage} src={banner}/>
+            <div className={classes.details}>
+
+            </div>
         </div>
     );
 }
