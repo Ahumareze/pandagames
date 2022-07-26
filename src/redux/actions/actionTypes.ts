@@ -1,5 +1,7 @@
 const SETLOADING = 'SETLOADING';
+const SETGAME = 'SETGAMES';
 
 export {
-    SETLOADING
+    SETLOADING,
+    SETGAME
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 //styles
 import classes from './selected.module.css';
@@ -11,11 +11,26 @@ import { Background, Header, PrimaryButton, SecondaryButton } from '../../compon
 import HeaderDetails from './components/headerDetails/HeaderDetails';
 import Banners from './components/banners/Banners';
 import Platforms from './components/platforms/Platforms';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchGames } from '../../redux/actions';
+import { useParams } from 'react-router-dom';
+
+import { IRootState } from '../../redux/reducers/mainReducer';
 
 function Selected() {
     //initialized
     const dispatch = useDispatch();
+    let { id } = useParams();
+
+    //state
+    const selectedGame = useSelector((state: IRootState) => state.selectedGame)
+
+    useEffect(() => {
+        if(id){
+            const newId = JSON.parse(id)
+            dispatch(fetchGames(newId))
+        }
+    })
 
     return (
         <Background bubbles={false} explore={false}>
@@ -24,7 +39,7 @@ function Selected() {
                 <section className={classes.section}>
                     <div>
                         <HeaderDetails />
-                        <Banners />
+                        <Banners image={selectedGame ? selectedGame.image : ''} />
                         <div className={classes.details}>
                             <p>Embark on a journey across Teyvat to find your lost sibling and seek answers from The Seven — the gods of each element. Explore this wondrous world, join forces with a diverse range of characters, and unravel the countless mysteries that Teyvat holds.
                                 Harness the seven elements to unleash elemental reactions. Anemo, Electro, Hydro, Pyro, Cryo, Dendro, and Geo interact in all sorts of ways, and Vision wielders have the power to turn this to their advantage.

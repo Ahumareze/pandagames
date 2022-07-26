@@ -6,7 +6,7 @@ import classes from './banners.module.css';
 //images
 import image from '../../../../assets/devImages/games/genshin.jpg';
 
-function Banners() {
+const Banners = ({image: string}) => {
     return (
         <div className={classes.container}>
             <img className={classes.bannerImage} src={image} alt='' />

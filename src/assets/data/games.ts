@@ -12,7 +12,7 @@ const games:Array<Games> = [
         title: 'Free Fire',
         image: freefire,
         price: 4.99,
-        id: 0
+        id: 0,
     },
     {
         title: 'Genshin Impact',
