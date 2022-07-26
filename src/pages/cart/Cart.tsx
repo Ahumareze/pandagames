@@ -30,9 +30,8 @@ function Cart() {
                         </div>
                     </div>
                     <div className={classes.purchaseContainer}>
-
+                        <h3>Purchase Summary</h3>
                     </div>
-
                 </section>
             </div>
         </Background>

@@ -35,5 +35,14 @@
 .purchaseContainer{
     height: 300px;
     width: 100%;
-    border: 1px solid #fff;
+    padding-top: 90px;
+}
+.purchaseContainer h3{
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    font-family: sans-serif;
+    margin: 0;
+    opacity: 0.9;
+    text-transform: capitalize;
 }
