@@ -6,9 +6,6 @@ import classes from './Item.module.css';
 //types
 import { CartItemProps } from '../../../../types';
 
-//images
-import banner from '../../../../assets/devImages/games/genshin.jpg';
-
 //icons
 import macos from '../../../../assets/icons/macos.png';
 import ps4 from '../../../../assets/icons/ps4.png';
