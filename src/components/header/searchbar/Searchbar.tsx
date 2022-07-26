@@ -1,7 +1,7 @@
 import React from 'react';
 
 //styles
-import classes from '../header/header.module.css';
+import classes from '../header.module.css';
 
 //icons
 import {FiSearch} from 'react-icons/fi';

@@ -7,7 +7,7 @@ import { HeaderProps } from '../../types';
 import classes from './header.module.css';
 
 //components
-import Searchbar from '../searchbar/Searchbar';
+import Searchbar from './searchbar/Searchbar';
 import { useNavigate } from 'react-router-dom';
 
 //utilities
