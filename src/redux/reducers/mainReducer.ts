@@ -1,8 +1,11 @@
 import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
-    loading: false
+    loading: false,
+    cart: null
 };
+
+export type IRootState = ReturnType<typeof reducer>;
 
 const reducer = (state = initialState, action: any) =>{
     switch(action.type){

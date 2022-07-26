@@ -8,7 +8,6 @@ import {Route, Routes} from 'react-router-dom';
 
 import { Home, Collections, Collection, Selected, Cart } from './pages';
 
-
 function App() {
   return (
     <div className="App">
