@@ -1,0 +1,55 @@
+.container{
+    width: 100%;
+}
+.h2{
+    height: 25px;
+    width: 400px;
+    /* background-color: var(--loader); */
+    border-radius: 5px;
+    opacity: 0.7;
+    margin-bottom: 25px;
+    animation: loading 1s linear infinite alternate;
+}
+
+.introText1, .introText2, .Itemtext{
+    height: 1rem;
+    width: 600px;
+    border-radius: 5px;
+    opacity: 0.7;
+    animation: loading 1s linear infinite alternate;
+}
+.introText2{
+    margin-top: 10px;
+    width: 250px;
+}
+.collectionsContainer{
+    margin-top: 40px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+.Item{
+    box-sizing: border-box;
+    padding: 10px;
+    padding-bottom: 15px;
+    width: 100%;
+}
+.img{
+    height: 150px;
+    width: 100%;
+    border-radius: 10px;
+    animation: loading 1s linear infinite alternate;
+}
+.Itemtext{
+    width: 150px;
+    margin-top: 20px;
+}
+@keyframes loading {
+    0%{
+        background-color: var(--loader);
+    }
+    100%{
+        background-color: var(--primary);
+    }
+}

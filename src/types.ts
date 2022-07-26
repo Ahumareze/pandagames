@@ -32,7 +32,9 @@ export interface Games{
     title: string,
     image: string,
     price: number,
-    id: number
+    id: number,
+    rating: number,
+    collection: object
 };
 
 export interface GameProps{
@@ -65,10 +67,26 @@ export interface CartItemProps{
     title: string,
     image: string,
     price: number
-}
+};
 
 export interface SummaryAmountProps{
     name: string,
     amount: number,
     isDiscount: boolean
+};
+
+export interface SelectedBannerProps{
+    img1: string,
+    img2: string,
+    img3: string,
+    img4: string
+};
+
+export interface SelectedHeaderProps{
+    title: string,
+    rating: number,
+    collection: object
+}
+export interface StarsProps{
+    rated: boolean
 }

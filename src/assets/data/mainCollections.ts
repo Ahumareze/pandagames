@@ -28,9 +28,9 @@ const mainCollections:Array<MainCollections> = [
         link: '/multiplayer'
     },
     {
-        name: 'Sports',
+        name: 'Sport',
         image: sports,
-        link: '/sports'
+        link: '/sport'
     },
     {
         name: 'Role-playing',
