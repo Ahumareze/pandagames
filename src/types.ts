@@ -59,4 +59,10 @@ export interface BannerProps{
 export interface ButtonProps{
     title: string,
     onClick: () => void
+};
+
+export interface CartItemProps{
+    title: string,
+    image: string,
+    price: number
 }

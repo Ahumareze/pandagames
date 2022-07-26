@@ -8,6 +8,7 @@
     display: grid;
     grid-template-columns: 170px 1fr 30px;
     gap: 12px;
+    overflow: hidden;
 }
 .mainImage{
     height: 100%;
@@ -63,7 +64,7 @@
     cursor: pointer;
 }
 .delete:hover{
-    animation: delete 0.5s ease forwards;
+    animation: delete 0.3s ease forwards;
 }
 @keyframes delete {
     100%{

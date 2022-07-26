@@ -9,6 +9,7 @@ import { cart } from '../../utilities/links';
 //components
 import { Background, Header } from '../../components';
 import { Item } from './components';
+import games from '../../assets/data/games';
 
 function Cart() {
     return (
@@ -19,15 +20,19 @@ function Cart() {
                     <div className={classes.cartContainer}>
                         <div className={classes.intro}>
                             <h2>My Cart</h2>
-                            <p>Games added to cart till appear below</p>
+                            <p>Games added to cart will appear below</p>
                         </div>
                         
                         <div className={classes.gamesContainer}>
-                            <Item />
-                            <Item />
-                            <Item />
+                            {games.map(i => (
+                                <Item title={i.title} price={i.price} image={i.image} key={i.id} />
+                            ))}
                         </div>
                     </div>
+                    <div className={classes.purchaseContainer}>
+
+                    </div>
+
                 </section>
             </div>
         </Background>
