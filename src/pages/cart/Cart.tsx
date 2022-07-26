@@ -24,6 +24,8 @@ function Cart() {
                         
                         <div className={classes.gamesContainer}>
                             <Item />
+                            <Item />
+                            <Item />
                         </div>
                     </div>
                 </section>
