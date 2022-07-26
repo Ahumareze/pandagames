@@ -66,3 +66,9 @@ export interface CartItemProps{
     image: string,
     price: number
 }
+
+export interface SummaryAmountProps{
+    name: string,
+    amount: number,
+    isDiscount: boolean
+}

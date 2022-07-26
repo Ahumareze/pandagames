@@ -1,15 +1,28 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 //styles
 import classes from './cart.module.css';
+
+//types
+import { SummaryAmountProps } from '../../types';
 
 //utilities
 import { cart } from '../../utilities/links';
 
 //components
-import { Background, Header } from '../../components';
+import { Background, Header, PrimaryButton } from '../../components';
 import { Item } from './components';
 import games from '../../assets/data/games';
+
+
+const SummaryAmount:FC<SummaryAmountProps> = ({name, amount, isDiscount}):JSX.Element => {
+    return(
+        <div className={classes.summaryAmount}>
+            <p>{name}</p>
+            {isDiscount ? <div>-${amount.toFixed(2)}</div> : <div>${amount.toFixed(2)}</div>}
+        </div>
+    )
+}
 
 function Cart() {
     return (
@@ -31,6 +44,14 @@ function Cart() {
                     </div>
                     <div className={classes.purchaseContainer}>
                         <h3>Purchase Summary</h3>
+                        <SummaryAmount name='Total price' amount={39.00} isDiscount={false} />
+                        <SummaryAmount name='Discount' amount={3.00} isDiscount={true} />
+                        <div className={classes.line} />
+                        <SummaryAmount name='Subtotal' amount={36.00} isDiscount={false} />
+
+                        <div className={classes.buttonContainer}>
+                            <PrimaryButton title={'Checkout'} onClick={() => console.log('')} />
+                        </div>
                     </div>
                 </section>
             </div>
