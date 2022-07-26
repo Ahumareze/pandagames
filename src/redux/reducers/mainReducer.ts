@@ -12,7 +12,7 @@ const reducer = (state = initialState, action: any) =>{
         case(actionTypes.SETLOADING):
             return {...state, loading: action.value}
     }
-    return state
+    return state;
 };
 
 export default reducer

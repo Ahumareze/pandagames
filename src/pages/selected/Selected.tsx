@@ -11,8 +11,12 @@ import { Background, Header, PrimaryButton, SecondaryButton } from '../../compon
 import HeaderDetails from './components/headerDetails/HeaderDetails';
 import Banners from './components/banners/Banners';
 import Platforms from './components/platforms/Platforms';
+import { useDispatch } from 'react-redux';
 
 function Selected() {
+    //initialized
+    const dispatch = useDispatch();
+
     return (
         <Background bubbles={false} explore={false}>
             <div className={classes.container}>
