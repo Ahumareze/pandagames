@@ -82,7 +82,31 @@
     gap: 20px;
 }
 .input{
-    height: 60px;
     width: 100%;
-    border: 1px solid #fff;
+}
+.input p{
+    margin: 0;
+    font-size: 16px;
+    color: #fff;
+    opacity: 0.8;
+}
+.input input, .input select{
+    height: 40px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #2F446F;
+    border-radius: 7px;
+    background-color: #0F0D2E;
+    color: rgba(255, 255, 255, 0.9);
+    padding-left: 10px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-top: 15px;
+}
+.input input:focus, .input select:focus{
+    outline: none;
+    border: 1px solid var(--button);
+}
+.addresslineDiv{
+    padding-top: 20px;
 }

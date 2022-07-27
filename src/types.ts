@@ -90,17 +90,26 @@ export interface SelectedHeaderProps{
     collection: string,
     collectionLink: string,
     age: number
-}
+};
+
 export interface StarsProps{
     rated: boolean
-}
+};
 
 export interface PurchaseSummaryProps{
     onClick: () => void,
     isCheckout: boolean
-}
+};
 
 export interface TabProps{
     title: string,
     isActive: boolean
+};
+
+export interface InputProps{
+    title: string
+};
+
+export interface SelectInputProps{
+    title: string
 }
