@@ -14,10 +14,9 @@ const games:Array<Games> = [
         price: 4.99,
         id: 0,
         rating: 3,
-        collection: {
-            name: 'Action',
-            link: '/action'
-        }
+        age: 12,
+        collection: 'Action',
+        collectionLink: '/action'
     },
     {
         title: 'Genshin Impact',
@@ -25,21 +24,19 @@ const games:Array<Games> = [
         price: 39.,
         id: 1,
         rating: 4,
-        collection: {
-            name: 'Role-playing',
-            link: '/role-playing'
-        }
+        age: 7,
+        collection: 'Role-playing',
+        collectionLink: '/role-playing',
     },
     {
-        title: 'Froza horizon 5',
+        title: 'Forza horizon 5',
         image: froza,
         price: 54.99,
         id: 2,
         rating: 2,
-        collection: {
-            name: 'Sport',
-            link: '/sport'
-        }
+        age: 7,
+        collection: 'Sport',
+        collectionLink: '/sport'
     },
     {
         title: 'Red Dead Redemption IV',
@@ -47,10 +44,9 @@ const games:Array<Games> = [
         price: 19.99,
         id: 3,
         rating: 5,
-        collection: {
-            name: 'Adventure',
-            link: '/adventure'
-        }
+        age: 12,
+        collection: 'Adventure',
+        collectionLink: '/adventure'
     }
 ];
 

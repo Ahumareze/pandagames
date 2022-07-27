@@ -3,6 +3,7 @@ import React, { FC } from 'react';
 //icons
 import { FiStar } from 'react-icons/fi';
 import { MdStar } from 'react-icons/md';
+import { useNavigate } from 'react-router-dom';
 import { SelectedHeaderProps, StarsProps } from '../../../../types';
 
 //styles
@@ -27,7 +28,13 @@ const Stars:FC<StarsProps> = ({rated}):JSX.Element => {
     )
 }
 
-const HeaderDetails:FC<SelectedHeaderProps> = ({title, rating, collection}):JSX.Element => {
+const HeaderDetails:FC<SelectedHeaderProps> = ({title, rating, collection, collectionLink, age}):JSX.Element => {
+    //initialize components
+    const navigate = useNavigate();
+
+    const handleNavigation = () => {
+        navigate('/collections' + collectionLink)
+    }
 
     return (
         <div className={classes.container}>
@@ -41,8 +48,8 @@ const HeaderDetails:FC<SelectedHeaderProps> = ({title, rating, collection}):JSX.
                         />
                     ))}
                 </div>
-                <p className={classes.genre}>{collection.name}</p>
-                <p className={classes.age}>Age 7+</p>
+                <p className={classes.genre} onClick={handleNavigation}>{collection}</p>
+                <p className={classes.age}>Age {age}+</p>
             </div>
         </div>
     );

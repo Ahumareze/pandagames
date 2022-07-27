@@ -34,7 +34,9 @@ export interface Games{
     price: number,
     id: number,
     rating: number,
-    collection: object
+    age: number,
+    collection: string,
+    collectionLink: string
 };
 
 export interface GameProps{
@@ -85,7 +87,9 @@ export interface SelectedBannerProps{
 export interface SelectedHeaderProps{
     title: string,
     rating: number,
-    collection: object
+    collection: string,
+    collectionLink: string,
+    age: number
 }
 export interface StarsProps{
     rated: boolean

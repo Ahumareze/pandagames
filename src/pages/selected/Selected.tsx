@@ -42,7 +42,13 @@ function Selected() {
         container = (
             <section className={classes.section}>
                 <div>
-                    <HeaderDetails collection={selectedGame.collection} title={selectedGame.title} rating={selectedGame.rating} />
+                    <HeaderDetails 
+                        collection={selectedGame.collection}
+                        collectionLink={selectedGame.collectionLink}
+                        title={selectedGame.title}
+                        rating={selectedGame.rating}
+                        age={selectedGame.age}
+                    />
                     <Banners
                         img1={selectedGame.image}
                         img2={selectedGame.image}
