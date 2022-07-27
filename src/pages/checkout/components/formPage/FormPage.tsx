@@ -19,30 +19,33 @@ const Input:FC<InputProps> = ({title}):JSX.Element => {
 const SelectInput:FC<SelectInputProps> = ({title, isCity}):JSX.Element => {
     const [cities, setCities] = useState(location[0].states);
 
+    const handleUpdate = (e: string) => {
+        const value = JSON.parse(e);
+        setCities(location[value].states)
+    }
+
     let container = (
-        <>
+        <select onChange={(e) => handleUpdate(e.target.value)}>
             {location.map((i, idx) => (
-                <option key={idx}>{i.name}</option>
+                <option key={idx} value={idx}>{i.name}</option>
             ))}
-        </>
+        </select>
     );
 
     if(isCity){
         container = (
-            <>
+            <select>
                 {cities.map((i, idx) => (
-                    <option>{i}</option>
+                    <option key={idx}>{i}</option>
                 ))}
-            </>
+            </select>
         )
     }
 
     return(
         <div className={classes.input}>
             <p className={classes.name}>{title}</p>
-            <select>
-                {container}
-            </select>
+            {container}
         </div>
     )
 }
