@@ -5,7 +5,6 @@ import { PurchaseSummaryProps, SummaryAmountProps } from '../../types';
 
 //component
 import { PrimaryButton } from '../buttons/Button';
-import { useNavigate } from 'react-router-dom';
 
 //styles
 import classes from './purchaseSummary.module.css';

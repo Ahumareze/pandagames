@@ -99,3 +99,8 @@ export interface PurchaseSummaryProps{
     onClick: () => void,
     isCheckout: boolean
 }
+
+export interface TabProps{
+    title: string,
+    isActive: boolean
+}

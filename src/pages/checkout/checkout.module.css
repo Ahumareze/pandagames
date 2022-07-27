@@ -10,12 +10,79 @@
     gap: 30px;
 }
 .main{
-    height: 400px;
     width: 100%;
-    border: 1px solid #fff;
 }
 .navigationContainer{
     height: 50px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.tab{
+    height: 50px;
+    display: grid;
+    grid-template-rows: 1fr 3px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.tab:hover{
+    animation: fadeIn 0.5s ease forwards;
+}
+@keyframes fadeIn {
+    100%{
+        background-color: hsla(220, 61%, 49%, 0.062);
+    }
+}
+.tabLine{
+    height: 100%;
+    width: 100%;
+    background-color: var(--button);
+    opacity: 0.75;
+    border-radius: 2px;
+}
+.tabMain{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.8);
+}
+.inActive .tabLine{
+    opacity: 0.3;
+}
+.inActive .tabMain{
+    color: rgba(255, 255, 255, 0.5);
+}
+
+
+/* Form Contianer styles*/
+.formContainer{
+    height: 300px;
+    width: 100%;
+}
+.formContainer .intro{
+    font-size: 16px;
+    color: #fff;
+    opacity: 0.7;
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+.mainFormContainer{
+    width: 100%;
+    padding-top: 30px;
+}
+.dualInputFields{
+    height: fit-content;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.input{
+    height: 60px;
     width: 100%;
     border: 1px solid #fff;
 }
