@@ -112,5 +112,10 @@ export interface InputProps{
 
 export interface SelectInputProps{
     title: string,
-    isCity: boolean
+    onChange: (e: string) => void
+};
+
+export interface SelectCityInputInterfacee{
+    title: string,
+    data: any
 }
