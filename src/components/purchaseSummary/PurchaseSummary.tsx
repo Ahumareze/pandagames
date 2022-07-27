@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 
 //types
-import { SummaryAmountProps } from '../../types';
+import { PurchaseSummaryProps, SummaryAmountProps } from '../../types';
 
 //component
 import { PrimaryButton } from '../buttons/Button';
@@ -20,12 +20,10 @@ const SummaryAmount:FC<SummaryAmountProps> = ({name, amount, isDiscount}):JSX.El
 }
 
 
-function PurchaseSummary() {
-    //initialize component
-    const navigate = useNavigate();
+const PurchaseSummary:FC<PurchaseSummaryProps> = ({onClick, isCheckout}):JSX.Element => {
 
     return (
-        <div className={classes.purchaseContainer}>
+        <div className={`${classes.purchaseContainer} ${isCheckout && classes.extraPadding}`}>
             <h3>Purchase Summary</h3>
             <SummaryAmount name='Total price' amount={39.00} isDiscount={false} />
             <SummaryAmount name='Discount' amount={3.00} isDiscount={true} />
@@ -33,7 +31,7 @@ function PurchaseSummary() {
             <SummaryAmount name='Subtotal' amount={36.00} isDiscount={false} />
 
             <div className={classes.buttonContainer}>
-                <PrimaryButton title={'Checkout'} onClick={() => navigate('/checkout')} />
+                <PrimaryButton title={'Checkout'} onClick={() => onClick()} />
             </div>
         </div>
     );

@@ -1,6 +1,9 @@
 .purchaseContainer{
     height: 300px;
     width: 100%;
+    padding-top: 40px;
+}
+.extraPadding{
     padding-top: 90px;
 }
 .purchaseContainer h3{

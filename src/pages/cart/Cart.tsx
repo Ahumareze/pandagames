@@ -10,9 +10,12 @@ import { cart } from '../../utilities/links';
 import { Background, Header, PurchaseSummary } from '../../components';
 import { Item } from './components';
 import games from '../../assets/data/games';
+import { useNavigate } from 'react-router-dom';
 
 
 function Cart() {
+    //initialize
+    const navigate = useNavigate();
     
     return (
         <Background bubbles={false} explore={false}>
@@ -31,7 +34,7 @@ function Cart() {
                             ))}
                         </div>
                     </div>
-                    <PurchaseSummary />
+                    <PurchaseSummary isCheckout onClick={() => navigate('/checkout')} />
                 </section>
             </div>
         </Background>

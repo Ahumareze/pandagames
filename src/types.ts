@@ -94,3 +94,8 @@ export interface SelectedHeaderProps{
 export interface StarsProps{
     rated: boolean
 }
+
+export interface PurchaseSummaryProps{
+    onClick: () => void,
+    isCheckout: boolean
+}
