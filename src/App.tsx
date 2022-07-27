@@ -6,7 +6,7 @@ import './App.css';
 //components
 import {Route, Routes} from 'react-router-dom';
 
-import { Home, Collections, Collection, Selected, Cart } from './pages';
+import { Home, Collections, Collection, Selected, Cart, Checkout } from './pages';
 
 function App() {
   return (
@@ -17,6 +17,7 @@ function App() {
         <Route path='/collections/:id' element={<Collection />} />
         <Route path='/games/:id' element={<Selected />} />
         <Route path='/cart' element={<Cart />} />
+        <Route path='/checkout' element={<Checkout />} />
       </Routes>
     </div>
   );

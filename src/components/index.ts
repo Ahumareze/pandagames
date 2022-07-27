@@ -3,6 +3,7 @@ import Background from "./background/Background";
 import Header from "./header/Header";
 import Game from "./game/Game";
 import Loader from "./loader/Loader";
+import PurchaseSummary from "./purchaseSummary/PurchaseSummary";
 
 //buttons
 import { PrimaryButton, SecondaryButton } from "./buttons/Button";
@@ -13,5 +14,6 @@ export {
     Game,
     Loader,
     PrimaryButton,
-    SecondaryButton
+    SecondaryButton,
+    PurchaseSummary
 }

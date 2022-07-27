@@ -1,0 +1,12 @@
+.container{
+    overflow: hidden;
+    height: 100vh;
+    overflow-y: scroll;
+}
+.section{
+    width: 850px;
+    display: grid;
+    grid-template-columns: 520px 1fr;
+    gap: 30px;
+    border: 1px solid #fff;
+}
