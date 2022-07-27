@@ -1,5 +1,8 @@
-import React, { FC } from 'react';
-import { InputProps } from '../../../../types';
+import React, { FC, useState } from 'react';
+import location from '../../../../assets/data/locations';
+
+//types
+import { InputProps, SelectInputProps } from '../../../../types';
 
 //styles
 import classes from '../../checkout.module.css';
@@ -13,12 +16,32 @@ const Input:FC<InputProps> = ({title}):JSX.Element => {
     )
 };
 
-const SelectInput:FC<InputProps> = ({title}):JSX.Element => {
+const SelectInput:FC<SelectInputProps> = ({title, isCity}):JSX.Element => {
+    const [cities, setCities] = useState(location[0].states);
+
+    let container = (
+        <>
+            {location.map((i, idx) => (
+                <option key={idx}>{i.name}</option>
+            ))}
+        </>
+    );
+
+    if(isCity){
+        container = (
+            <>
+                {cities.map((i, idx) => (
+                    <option>{i}</option>
+                ))}
+            </>
+        )
+    }
+
     return(
         <div className={classes.input}>
             <p className={classes.name}>{title}</p>
             <select>
-                <option>Nigeria</option>
+                {container}
             </select>
         </div>
     )
@@ -32,8 +55,8 @@ function FormPage() {
                 <div className={classes.dualInputFields}>
                     <Input title={'First Name'} />
                     <Input title={'Last Name'}/>
-                    <SelectInput title={'Country'}/>
-                    <SelectInput title={'City'}/>
+                    <SelectInput title={'Country'} isCity={false} />
+                    <SelectInput title={'City'} isCity />
                 </div>
                 <div className={classes.addresslineDiv}>
                     <Input title={'Address Line'}/>

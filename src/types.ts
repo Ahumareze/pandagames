@@ -111,5 +111,6 @@ export interface InputProps{
 };
 
 export interface SelectInputProps{
-    title: string
+    title: string,
+    isCity: boolean
 }
