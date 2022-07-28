@@ -7,6 +7,7 @@ import classes from './checkout.module.css';
 import { Background, Header, PurchaseSummary } from '../../components';
 import Navigation from './components/navigation/Navigation';
 import FormPage from './components/formPage/FormPage';
+import PaymentPage from './components/paymentPage/PaymentPage';
 
 function Checkout() {
     return (
@@ -16,7 +17,8 @@ function Checkout() {
                 <section className={classes.section}>
                     <div className={classes.main}>
                         <Navigation />
-                        <FormPage />
+                        {/* <FormPage /> */}
+                        <PaymentPage />
                     </div>
                     <PurchaseSummary isCheckout={false} onClick={() => console.log('')} />
                 </section>

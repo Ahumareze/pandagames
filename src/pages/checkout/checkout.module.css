@@ -60,7 +60,6 @@
 
 /* Form Contianer styles*/
 .formContainer{
-    height: 300px;
     width: 100%;
 }
 .formContainer .intro{
@@ -109,4 +108,36 @@
 }
 .addresslineDiv{
     padding-top: 20px;
+}
+.paymentPage{
+    width: 100%;
+}
+.paymentPage .intro{
+    font-size: 16px;
+    color: #fff;
+    opacity: 0.7;
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+.paymentType{
+    height: 60px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 16px;
+    cursor: pointer;
+}
+.paymentType:hover{
+    animation: payment 0.5s ease forwards;
+}
+@keyframes payment {
+    100%{
+        background-color: var(--secondary);
+    }
 }
