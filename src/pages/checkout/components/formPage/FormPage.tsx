@@ -2,7 +2,7 @@ import React, { FC, useState } from 'react';
 import location from '../../../../assets/data/locations';
 
 //types
-import { InputProps, SelectInputProps } from '../../../../types';
+import { InputProps, SelectCityInputProps, SelectInputProps } from '../../../../types';
 
 //styles
 import classes from '../../checkout.module.css';
@@ -27,6 +27,19 @@ const SelectInput:FC<SelectInputProps> = ({title, onChange}):JSX.Element => {
             </select>
         </div>
     )
+};
+
+const SelectCity:FC<SelectCityInputProps> = ({title, data}) => {
+    return(
+        <div className={classes.input}>
+            <p className={classes.name}>{title}</p>
+            <select>
+                {data.map((i: any, idx: number) => (
+                    <option key={idx} value={idx}>{i}</option>
+                ))}
+            </select>
+        </div>
+    )
 }
 
 function FormPage() {
@@ -46,6 +59,7 @@ function FormPage() {
                     <Input title={'First Name'} />
                     <Input title={'Last Name'}/>
                     <SelectInput title={'Country'} onChange={(e) => handleUpdate(e)} />
+                    <SelectCity title={'City'} data={cities} />
                 </div>
                 <div className={classes.addresslineDiv}>
                     <Input title={'Address Line'}/>

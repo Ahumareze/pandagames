@@ -115,7 +115,7 @@ export interface SelectInputProps{
     onChange: (e: string) => void
 };
 
-export interface SelectCityInputInterfacee{
+export interface SelectCityInputProps{
     title: string,
     data: any
 }
