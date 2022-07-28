@@ -101,9 +101,15 @@ export interface PurchaseSummaryProps{
     isCheckout: boolean
 };
 
+export interface NavigationProps{
+    onClick: (e: boolean) => void,
+    activeLink: boolean
+}
+
 export interface TabProps{
     title: string,
-    isActive: boolean
+    isActive: boolean,
+    onClick: () => void
 };
 
 export interface InputProps{
