@@ -17,6 +17,7 @@ import { useParams } from 'react-router-dom';
 
 import { IRootState } from '../../redux/reducers/mainReducer';
 import PurchasePlatform from './components/purchasePlatform/PurchasePlatform';
+import Details from './components/details/Details';
 
 function Selected() {
     //initialized
@@ -39,18 +40,23 @@ function Selected() {
 
     useEffect(() => {
         if(selectedGame){
-            console.log(selectedGame.prices[0]);
-            setPrices(selectedGame.prices[0]);
+            setPrices([selectedGame.prices[0]]);
+            setMainPrice(selectedGame.prices[0].price)
         }
     }, [selectedGame]);
 
-    useEffect(() => {
-        priceCalculator();
-    }, [prices])
+    const addPlatform = (e: any) => {
+        const arr = [...prices];
+        arr.push(e);
 
-    const priceCalculator = () => {
+        setMainPrice(prev => prev + e.price)
+        setPrices(arr)
+    };
 
-    }
+    const removePlatform = (e: any) => {
+        // const arr = [...prices];
+        // arr.findIndex(e)
+    };
 
     let container;
 
@@ -71,12 +77,10 @@ function Selected() {
                         img3={selectedGame.image}
                         img4={selectedGame.image}
                     />
-                    <div className={classes.details}>
-                        <p>Embark on a journey across Teyvat to find your lost sibling and seek answers from The Seven — the gods of each element. Explore this wondrous world, join forces with a diverse range of characters, and unravel the countless mysteries that Teyvat holds.
-                            Harness the seven elements to unleash elemental reactions. Anemo, Electro, Hydro, Pyro, Cryo, Dendro, and Geo interact in all sorts of ways, and Vision wielders have the power to turn this to their advantage.
-                            Will you vaporize Hydro with Pyro, electro-charge it with Electro, or freeze it with Cryo? Your mastery of the elements will give you the upper hand in battle and exploration.
-                        </p>
-                    </div>
+                    <Details details={`Embark on a journey across Teyvat to find your lost sibling and seek answers from The Seven — the gods of each element. Explore this wondrous world, join forces with a diverse range of characters, and unravel the countless mysteries that Teyvat holds.
+                        Harness the seven elements to unleash elemental reactions. Anemo, Electro, Hydro, Pyro, Cryo, Dendro, and Geo interact in all sorts of ways, and Vision wielders have the power to turn this to their advantage.
+                        Will you vaporize Hydro with Pyro, electro-charge it with Electro, or freeze it with Cryo? Your mastery of the elements will give you the upper hand in battle and exploration.`} 
+                    />
                     <Platforms platforms={selectedGame.prices} />
                     <div className={classes.developers}>
                         <p className={classes.title}>Developers</p>
@@ -93,12 +97,18 @@ function Selected() {
                 </div>
 
                 <div className={classes.purchaseDiv}>
-                    <div className={classes.price}>N {(mainPrice).toLocaleString()}</div>
+                    <div className={classes.price}>N{(mainPrice).toLocaleString()}</div>
                     <div className={classes.buttonsContainer}>
                         <div className={classes.purchasePlatformContianer}>
-                            <PurchasePlatform />
-                            <PurchasePlatform />
-                            <PurchasePlatform />
+                            {selectedGame.prices.map((i: any, idx: number) => (
+                                    <PurchasePlatform 
+                                        name={i.name}
+                                        active={prices.includes(i)}
+                                        add={() => addPlatform(i)}
+                                        remove={() => removePlatform(i)}
+                                        key={idx} 
+                                    />
+                            ))}
                         </div>
                         <PrimaryButton title={'add to cart'} onClick={() => console.log('add  to cart')} />
                     </div>

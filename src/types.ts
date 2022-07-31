@@ -128,4 +128,15 @@ export interface SelectInputProps{
 export interface SelectCityInputProps{
     title: string,
     data: any
+};
+
+export interface PurchasePlatformProps{
+    name: string,
+    active: boolean,
+    add: () => void,
+    remove: () => void
+};
+
+export interface SelectedGameDetailsProps{
+    details: string
 }

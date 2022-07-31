@@ -27,7 +27,7 @@
     padding: 20px 0;
     border-top: 1px solid #3063c97e;
 }
-.details p{
+.details .detailsP{
     margin: 0;
     color: #fff;
     opacity: 0.7;
@@ -85,4 +85,27 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: 15px;
     padding-bottom: 40px;
+}
+.seeMoreButton{
+    height: 34px;
+    width: fit-content;
+    background-color:var(--secondary);
+    padding: 0 20px;
+    display: flex;
+    color: rgba(255, 255, 255, 0.808);
+    align-items: center;
+    border-radius: 20px;
+    gap: 10px;
+    font-size: 14px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.seeMoreButton:hover{
+    color: #fff;
+}
+.seeMoreButton p{
+    margin: 0;
+    padding-bottom: 3px;
 }

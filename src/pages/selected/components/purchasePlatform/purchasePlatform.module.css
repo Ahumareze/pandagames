@@ -1,14 +1,36 @@
 .contianer{
     height: 80px;
     width: 100%;
-    background: var(--primary);
+    background: var(--secondary);
     /* border: 1px solid var(--button); */
     border-radius: 7px;
     cursor: pointer;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.5;
+    color: #fff;
+}
+.active{
+    opacity: 1;
+    border: 1px solid var(--button);
 }
 .contianer:hover{
     animation: scaleUp2 0.7s ease forwards;
 }
 @keyframes scaleUp2 {
-    100%{background: var(--secondary)}
+    100%{opacity: 1;}
+}
+.box{
+    height: fit-content;
+    width: fit-content;
+    text-align: center;
+}
+.box img{
+    height: 20px;
+}
+.box p{
+    font-size: 16px;
+    margin: 0;
+    margin-top: 3px;
 }

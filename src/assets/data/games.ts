@@ -12,7 +12,7 @@ const games:Array<Games> = [
         title: 'Free Fire',
         image: freefire,
         prices: [
-            {xbox: 3000}
+            {name: 'xbox', price: 3000}
         ],
         id: 0,
         rating: 3,
@@ -29,9 +29,9 @@ const games:Array<Games> = [
         collection: 'Role-playing',
         collectionLink: '/role-playing',
         prices: [
-            {ps4: 2000},
-            {ps5: 2000},
-            {xbox: 3000}
+            {name: 'ps4', price: 4000},
+            {name: 'ps5', price: 5500},
+            {name: 'xbox', price: 4700}
         ]
     },
     {
@@ -43,9 +43,8 @@ const games:Array<Games> = [
         collection: 'Sport',
         collectionLink: '/sport',
         prices: [
-            {ps4: 2000},
-            {ps5: 2000},
-            {xbox: 3000}
+            {name: 'ps4', price: 2700},
+            {name: 'xbox', price: 3400}
         ],
     },
     {
@@ -57,9 +56,9 @@ const games:Array<Games> = [
         collection: 'Adventure',
         collectionLink: '/adventure',
         prices: [
-            {ps4: 2000},
-            {ps5: 2000},
-            {xbox: 3000}
+            {name: 'ps4', price: 2000},
+            {name: 'ps5', price: 3500},
+            {name: 'xbox', price: 4000}
         ],
     }
 ];

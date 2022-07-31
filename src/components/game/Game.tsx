@@ -37,15 +37,11 @@ const Game:FC<GameProps> = ({title, image, prices, id}):JSX.Element => {
     //parse and arrange prices
     const pricesParser = () => {
         let priceArr: number[] = [];
-        let platformArr: string[] = [];
+        // let platformArr: string[] = [];
 
         prices.map((i: any) => {
-            Object.keys(i).map(( k) => {
-                platformArr.push(k);
-                priceArr.push(i[k]);
-
-                return null;
-            });
+            priceArr.push(i.price)
+            
             return null
         });
         // setPlatforms(platformArr);
