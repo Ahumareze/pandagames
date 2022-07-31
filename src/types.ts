@@ -31,7 +31,7 @@ export interface MainCollections{
 export interface Games{
     title: string,
     image: string,
-    price: number,
+    prices: Array<object>,
     id: number,
     rating: number,
     age: number,
@@ -42,7 +42,7 @@ export interface Games{
 export interface GameProps{
     title: string,
     image: string,
-    price: number,
+    prices: Array<object>,
     id: number
 }
 
@@ -95,6 +95,10 @@ export interface SelectedHeaderProps{
 export interface StarsProps{
     rated: boolean
 };
+
+export interface platformsProps{
+    platforms: Array<string>
+}
 
 export interface PurchaseSummaryProps{
     onClick: () => void,

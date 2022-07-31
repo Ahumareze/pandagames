@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 
 //styles
 import classes from './collections.module.css';
@@ -7,28 +7,35 @@ import classes from './collections.module.css';
 import { Background, Header } from '../../components';
 
 //utilities
-import { collections } from '../../utilities/links';
+import { collectionsLink } from '../../utilities/links';
 
 //components
 import Collection from './components/collection/Collection';
-
-//data
-import mainCollections from '../../assets/data/mainCollections';
+import { IRootState } from '../../redux/reducers/mainReducer';
 import Loader from './components/loader/Loader';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchCollections } from '../../redux/actions/actions';
 
 function Collections() {
-    const [loading, setLoading] = useState(true);
+    //initialize components
+    const dispatch = useDispatch();
 
-    setTimeout(() => {
-        setLoading(false)
-    }, 2000);
+    //state
+    const loading = useSelector((state: IRootState) => state.loading);
+    const collections = useSelector((state: IRootState) => state.collections);
+    const fetchError = useSelector((state: IRootState) => state.fetchError);
+
+    //fetch collections with redux
+    useEffect(() => {
+        dispatch(fetchCollections())
+    }, [dispatch])
 
     let container;
 
-    if(loading){
+    if(fetchError){
         container = (
             <section>
-                <Loader />
+                <h1>Error fetching data</h1>
             </section>
         )
     }else{
@@ -40,7 +47,7 @@ function Collections() {
                 </div>
 
                 <div className={classes.collectionsContainer}>
-                    {mainCollections.map((i, idx) => (
+                    {collections?.map((i: any, idx: number) => (
                         <Collection
                             name={i.name}
                             image={i.image}
@@ -51,13 +58,19 @@ function Collections() {
                 </div>
             </section>
         )
-    }
+    };
+
+    const loader = (
+        <section>
+            <Loader />
+        </section>
+    )
 
     return (
         <Background bubbles={false} explore>
             <div className={classes.container}>
-                <Header active={collections} />
-                {container}
+                <Header active={collectionsLink} />
+                {loading ? loader : container}
             </div>
         </Background>
     );

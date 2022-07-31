@@ -20,6 +20,7 @@
     object-fit: cover;
     border-radius: 10px;
     background-color: var(--primary);
+    border: 1px solid transparent;
 }
 .container .title{
     color: #fff;

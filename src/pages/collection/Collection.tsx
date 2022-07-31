@@ -4,7 +4,7 @@ import React from 'react';
 import classes from './collection.module.css';
 
 //utilities
-import { collections } from '../../utilities/links';
+import { collectionsLink } from '../../utilities/links';
 
 //components
 import { Background, Game, Header } from '../../components';
@@ -19,7 +19,7 @@ function Collection() {
     return (
         <Background bubbles={false} explore={false}>
             <div className={classes.container}>
-                <Header active={collections} />
+                <Header active={collectionsLink} />
                 <section>
                     <h2>{id} games</h2>
                     <div className={classes.collectionContainer}>
@@ -27,7 +27,7 @@ function Collection() {
                         <Game
                             title={i.title}
                             image={i.image}
-                            price={i.price}
+                            prices={i.prices}
                             key={idx}
                             id={i.id}
                         />

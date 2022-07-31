@@ -79,6 +79,10 @@
 }
 .buttonsContainer{
     padding-top: 30px;
+}
+.purchasePlatformContianer{
     display: grid;
-    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+    padding-bottom: 40px;
 }

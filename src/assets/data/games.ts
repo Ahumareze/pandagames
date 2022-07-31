@@ -11,7 +11,9 @@ const games:Array<Games> = [
     {
         title: 'Free Fire',
         image: freefire,
-        price: 4.99,
+        prices: [
+            {xbox: 3000}
+        ],
         id: 0,
         rating: 3,
         age: 12,
@@ -21,32 +23,44 @@ const games:Array<Games> = [
     {
         title: 'Genshin Impact',
         image: genshin,
-        price: 39.,
         id: 1,
         rating: 4,
         age: 7,
         collection: 'Role-playing',
         collectionLink: '/role-playing',
+        prices: [
+            {ps4: 2000},
+            {ps5: 2000},
+            {xbox: 3000}
+        ]
     },
     {
         title: 'Forza horizon 5',
         image: froza,
-        price: 54.99,
         id: 2,
         rating: 2,
         age: 7,
         collection: 'Sport',
-        collectionLink: '/sport'
+        collectionLink: '/sport',
+        prices: [
+            {ps4: 2000},
+            {ps5: 2000},
+            {xbox: 3000}
+        ],
     },
     {
         title: 'Red Dead Redemption IV',
         image: reddead,
-        price: 19.99,
         id: 3,
         rating: 5,
         age: 12,
         collection: 'Adventure',
-        collectionLink: '/adventure'
+        collectionLink: '/adventure',
+        prices: [
+            {ps4: 2000},
+            {ps5: 2000},
+            {xbox: 3000}
+        ],
     }
 ];
 

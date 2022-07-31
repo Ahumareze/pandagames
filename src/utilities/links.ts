@@ -1,9 +1,9 @@
 const home = 'HOME';
-const collections = 'COLLECTIONS';
+const collectionsLink = 'COLLECTIONS';
 const cart = 'CART';
 
 export {
     home,
-    collections,
+    collectionsLink,
     cart
 }

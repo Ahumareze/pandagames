@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 //styles
 import classes from './selected.module.css';
 
 //utilities
-import { collections } from '../../utilities/links';
+import { collectionsLink } from '../../utilities/links';
 
 //components
-import { Background, Header, PrimaryButton, SecondaryButton } from '../../components';
+import { Background, Header, PrimaryButton } from '../../components';
 import HeaderDetails from './components/headerDetails/HeaderDetails';
 import Banners from './components/banners/Banners';
 import Platforms from './components/platforms/Platforms';
@@ -16,25 +16,41 @@ import { fetchGames } from '../../redux/actions';
 import { useParams } from 'react-router-dom';
 
 import { IRootState } from '../../redux/reducers/mainReducer';
+import PurchasePlatform from './components/purchasePlatform/PurchasePlatform';
 
 function Selected() {
     //initialized
     const dispatch = useDispatch();
     let { id } = useParams();
 
-    //state
-    const selectedGame = useSelector((state: IRootState) => state.selectedGame)
+    //redux state
+    const selectedGame = useSelector((state: IRootState) => state.selectedGame);
+
+    //local state
+    const [prices, setPrices] = useState<Array<object>>([]);
+    const [mainPrice, setMainPrice] = useState<number>(0);
 
     useEffect(() => {
         if(id){
             const newId = JSON.parse(id)
             dispatch(fetchGames(newId))
-        }
-    })
+        };
+    }, [dispatch, id]);
 
-    // useEffect(() => {
-    //     console.log(selectedGame)
-    // }, [selectedGame]);
+    useEffect(() => {
+        if(selectedGame){
+            console.log(selectedGame.prices[0]);
+            setPrices(selectedGame.prices[0]);
+        }
+    }, [selectedGame]);
+
+    useEffect(() => {
+        priceCalculator();
+    }, [prices])
+
+    const priceCalculator = () => {
+
+    }
 
     let container;
 
@@ -61,7 +77,7 @@ function Selected() {
                             Will you vaporize Hydro with Pyro, electro-charge it with Electro, or freeze it with Cryo? Your mastery of the elements will give you the upper hand in battle and exploration.
                         </p>
                     </div>
-                    <Platforms />
+                    <Platforms platforms={selectedGame.prices} />
                     <div className={classes.developers}>
                         <p className={classes.title}>Developers</p>
                         <div className={classes.devStudios}>
@@ -77,10 +93,14 @@ function Selected() {
                 </div>
 
                 <div className={classes.purchaseDiv}>
-                    <div className={classes.price}>${(selectedGame.price).toFixed(2)}</div>
+                    <div className={classes.price}>N {(mainPrice).toLocaleString()}</div>
                     <div className={classes.buttonsContainer}>
-                        <PrimaryButton title={'buy now'} onClick={() => console.log('buy now')} />
-                        <SecondaryButton title={'add to cart'} onClick={() => console.log('add to cart')}/>
+                        <div className={classes.purchasePlatformContianer}>
+                            <PurchasePlatform />
+                            <PurchasePlatform />
+                            <PurchasePlatform />
+                        </div>
+                        <PrimaryButton title={'add to cart'} onClick={() => console.log('add  to cart')} />
                     </div>
                 </div>
             </section>
@@ -90,7 +110,7 @@ function Selected() {
     return (
         <Background bubbles={false} explore={false}>
             <div className={classes.container}>
-                <Header active={collections} />
+                <Header active={collectionsLink} />
                 {container}
             </div>
         </Background>

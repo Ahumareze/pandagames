@@ -11,7 +11,7 @@ import Searchbar from './searchbar/Searchbar';
 import { useNavigate } from 'react-router-dom';
 
 //utilities
-import {home, collections, cart} from '../../utilities/links';
+import {home, collectionsLink, cart} from '../../utilities/links';
 
 const Header:FC<HeaderProps> = ({active}):JSX.Element => {
     const navigate = useNavigate();
@@ -35,7 +35,7 @@ const Header:FC<HeaderProps> = ({active}):JSX.Element => {
                     </div>
                     <div 
                         className={classes.links} 
-                        style={active === collections ? {color: '#BCCFFF'} : {}}
+                        style={active === collectionsLink ? {color: '#BCCFFF'} : {}}
                         onClick={() => handleNavigation('/collections')}
                     >
                         Collections

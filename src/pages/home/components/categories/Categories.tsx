@@ -31,7 +31,7 @@ function Categories() {
                     <Game
                         title={i.title}
                         image={i.image}
-                        price={i.price}
+                        prices={i.prices}
                         key={idx}
                         id={i.id}
                     />

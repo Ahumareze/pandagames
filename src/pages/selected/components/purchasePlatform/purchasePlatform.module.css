@@ -1,0 +1,14 @@
+.contianer{
+    height: 80px;
+    width: 100%;
+    background: var(--primary);
+    /* border: 1px solid var(--button); */
+    border-radius: 7px;
+    cursor: pointer;
+}
+.contianer:hover{
+    animation: scaleUp2 0.7s ease forwards;
+}
+@keyframes scaleUp2 {
+    100%{background: var(--secondary)}
+}

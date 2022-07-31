@@ -30,7 +30,7 @@ function Cart() {
                         
                         <div className={classes.gamesContainer}>
                             {games.map(i => (
-                                <Item title={i.title} price={i.price} image={i.image} key={i.id} />
+                                <Item title={i.title} price={200} image={i.image} key={i.id} />
                             ))}
                         </div>
                     </div>
