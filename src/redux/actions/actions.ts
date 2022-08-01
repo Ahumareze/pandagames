@@ -5,9 +5,10 @@ import axios from 'axios';
 //utilities
 import games from "../../assets/data/games";
 import backendLink from '../../utilities/backendLink';
+import { cartName } from '../../utilities/localNames';
 
 export const fetchCollections = () => {
-    return (dispatch: any) => {
+    return (dispatch: (e: object) => void) => {
         dispatch(setLoading(true));
         axios.get(backendLink + '/collections').then(r => {
             dispatch(setLoading(false));
@@ -16,6 +17,37 @@ export const fetchCollections = () => {
             dispatch(setLoading(false));
             dispatch(setFetchError(true));
         })
+    }
+};
+
+export const addToCart = (item: object) => {
+    return (dispatch: (e: object) => void) => {
+        const localData = localStorage.getItem(cartName);
+        let arr = [];
+        if(localData){
+            const parsedData = JSON.parse(localData);
+            parsedData.push(item);
+            localStorage.setItem(cartName, JSON.stringify(parsedData));
+        }else{
+            arr.push(item);
+            localStorage.setItem(cartName, JSON.stringify(arr));
+        }
+    }
+};
+
+export const fetchCartData = () => {
+    return (dispatch: (e: object) => void) => {
+        const localData = localStorage.getItem(cartName);
+        if(localData){
+            dispatch(setCartData(JSON.parse(localData)))
+        }
+    }
+};
+
+const setCartData = (value: Array<object>) => {
+    return{
+        type: actionTypes.SETCARTDATA,
+        value
     }
 }
 

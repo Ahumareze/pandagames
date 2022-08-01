@@ -30,6 +30,10 @@
     font-family: sans-serif;
     opacity: 0.9;
     font-size: 17px;
+    cursor: pointer;
+}
+.details h3:hover{
+    color: rgb(168, 220, 255);
 }
 .details p{
     color: #fff;

@@ -12,16 +12,26 @@ import ps4 from '../../../../assets/icons/ps4.png';
 import windows from '../../../../assets/icons/windows.png';
 import { FiX } from 'react-icons/fi';
 
+//component
+import { useNavigate } from 'react-router-dom';
 
-const Item:FC<CartItemProps> = ({title, image, price}):JSX.Element => {
+
+const Item:FC<CartItemProps> = ({title, image, price, id}):JSX.Element => {
+    //initialize
+    const navigate = useNavigate();
+    
+    const handleNavigate = () => {
+        navigate('/games/' + id)
+    }
+
     return (
         <div className={classes.container}>
             <img className={classes.mainImage} src={image} alt=''/>
 
             <div className={classes.details}>
                 <div>
-                    <h3>{title}</h3>
-                    <p>${price.toFixed(2)}</p>
+                    <h3 onClick={handleNavigate}>{title}</h3>
+                    <p>N{price.toLocaleString()}</p>
                 </div>
                 <div className={classes.platforms}>
                     <img alt='' src={ps4} />

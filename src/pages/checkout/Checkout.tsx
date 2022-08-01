@@ -22,7 +22,7 @@ function Checkout() {
                         <Navigation activeLink={showPaymentPage} onClick={(e) => setShowPaymentPage(e)} />
                         {showPaymentPage ? <PaymentPage /> : <FormPage />}
                     </div>
-                    <PurchaseSummary isCheckout={false} onClick={() => console.log('')} />
+                    <PurchaseSummary onClick={() => console.log('')} />
                 </section>
             </div>
         </Background>

@@ -1,3 +1,5 @@
 export {
-    fetchGames
+    fetchGames,
+    addToCart,
+    fetchCartData
 } from './actions'

@@ -68,7 +68,8 @@ export interface ButtonProps{
 export interface CartItemProps{
     title: string,
     image: string,
-    price: number
+    price: number,
+    id: string
 };
 
 export interface SummaryAmountProps{
@@ -101,8 +102,7 @@ export interface platformsProps{
 }
 
 export interface PurchaseSummaryProps{
-    onClick: () => void,
-    isCheckout: boolean
+    onClick: () => void
 };
 
 export interface NavigationProps{
