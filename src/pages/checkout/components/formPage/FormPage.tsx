@@ -7,11 +7,11 @@ import { InputProps, SelectCityInputProps, SelectInputProps } from '../../../../
 //styles
 import classes from '../../checkout.module.css';
 
-const Input:FC<InputProps> = ({title}):JSX.Element => {
+const Input:FC<InputProps> = ({title, onChange}):JSX.Element => {
     return(
         <div className={classes.input}>
             <p className={classes.name}>{title}</p>
-            <input />
+            <input onChange={e => onChange(e.target.value)} />
         </div>
     )
 };
@@ -29,11 +29,11 @@ const SelectInput:FC<SelectInputProps> = ({title, onChange}):JSX.Element => {
     )
 };
 
-const SelectCity:FC<SelectCityInputProps> = ({title, data}) => {
+const SelectCity:FC<SelectCityInputProps> = ({title, data, onChange}) => {
     return(
         <div className={classes.input}>
             <p className={classes.name}>{title}</p>
-            <select>
+            <select onChange={(e) => onChange(e.target.value)}>
                 {data.map((i: any, idx: number) => (
                     <option key={idx} value={idx}>{i}</option>
                 ))}
@@ -43,12 +43,32 @@ const SelectCity:FC<SelectCityInputProps> = ({title, data}) => {
 }
 
 function FormPage() {
-    //local states
-    const [cities, setCities] = useState(location[0].states);
+    //local state
+    const [countries, setCountries] = useState<Array<string>>(location[0].states)
+
+    //formdata
+    const [firstname, setFirstname] = useState<string>('');
+    const [lastname, setLastname] = useState<string>('');
+    const [address, setAddress] = useState<string>('');
+    const [country, setCountry] = useState<string>(location[0].name);
+    const [city, setCity] = useState<string>(location[0].states[0]);
 
     const handleUpdate = (e: string) => {
         const value = JSON.parse(e);
-        setCities(location[value].states)
+        setCountries(location[value].states);
+        setCountry(e);
+    };
+
+    const handleSubmit = () => {
+        const data = {
+            firstname,
+            lastname,
+            address,
+            country,
+            city
+        };
+
+        console.log(data)
     }
 
     return (
@@ -56,13 +76,13 @@ function FormPage() {
             <p className={classes.intro}>Add the address you would like to recieve your parcel</p>
             <div className={classes.mainFormContainer}>
                 <div className={classes.dualInputFields}>
-                    <Input title={'First Name'} />
-                    <Input title={'Last Name'}/>
+                    <Input title={'First Name'} onChange={(e) => setFirstname(e)} />
+                    <Input title={'Last Name'} onChange={(e) => setLastname(e)}/>
                     <SelectInput title={'Country'} onChange={(e) => handleUpdate(e)} />
-                    <SelectCity title={'City'} data={cities} />
+                    <SelectCity title={'City'} data={countries} onChange={e => setCity(e)} />
                 </div>
                 <div className={classes.addresslineDiv}>
-                    <Input title={'Address Line'}/>
+                    <Input title={'Address Line'} onChange={(e) => setAddress(e)}/>
                 </div>
             </div>
         </div>

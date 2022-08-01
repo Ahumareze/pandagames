@@ -117,7 +117,8 @@ export interface TabProps{
 };
 
 export interface InputProps{
-    title: string
+    title: string,
+    onChange: (e: string) => void
 };
 
 export interface SelectInputProps{
@@ -127,7 +128,8 @@ export interface SelectInputProps{
 
 export interface SelectCityInputProps{
     title: string,
-    data: any
+    data: any,
+    onChange: (e: string) => void
 };
 
 export interface PurchasePlatformProps{
