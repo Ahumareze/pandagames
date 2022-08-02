@@ -11,7 +11,7 @@ import { Background, Header, PurchaseSummary } from '../../components';
 import { Item } from './components';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchCartData } from '../../redux/actions';
+import { fetchCartData, removeItem } from '../../redux/actions';
 
 //types
 import { IRootState } from '../../redux/reducers/mainReducer';
@@ -31,7 +31,7 @@ function Cart() {
 
     let container;
 
-    if(cartData){
+    if(cartData && cartData.length > 0){
         container = (
             <section className={classes.section}>
                 <div className={classes.cartContainer}>
@@ -41,13 +41,14 @@ function Cart() {
                     </div>
                     
                     <div className={classes.gamesContainer}>
-                        {cartData.map((i: any) => (
+                        {cartData.map((i: any, idx: number) => (
                             <Item
                                 title={i.title} 
                                 price={i.mainPrice} 
                                 image={i.image}
                                 id={i.id}
-                                key={i.id} 
+                                onDelete={() =>dispatch(removeItem(idx))}
+                                key={i.idx}
                             />
                         ))}
                     </div>

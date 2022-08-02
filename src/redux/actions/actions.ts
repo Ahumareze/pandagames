@@ -44,6 +44,18 @@ export const fetchCartData = () => {
     }
 };
 
+export const removeItem = (id: number) => {
+    return (dispatch: (e: object) => void) => {
+        const localData = localStorage.getItem(cartName);
+        if(localData){
+            let parsedData = JSON.parse(localData);
+            parsedData.splice(id, 1);
+            dispatch(setCartData(parsedData));
+            localStorage.setItem(cartName, JSON.stringify(parsedData));
+        }
+    }
+}
+
 const setCartData = (value: Array<object>) => {
     return{
         type: actionTypes.SETCARTDATA,

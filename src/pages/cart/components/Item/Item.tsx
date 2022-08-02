@@ -16,7 +16,7 @@ import { FiX } from 'react-icons/fi';
 import { useNavigate } from 'react-router-dom';
 
 
-const Item:FC<CartItemProps> = ({title, image, price, id}):JSX.Element => {
+const Item:FC<CartItemProps> = ({title, image, price, id, onDelete}):JSX.Element => {
     //initialize
     const navigate = useNavigate();
     
@@ -40,7 +40,7 @@ const Item:FC<CartItemProps> = ({title, image, price, id}):JSX.Element => {
                 </div>
             </div>
 
-            <div className={classes.delete}>
+            <div className={classes.delete} onClick={onDelete}>
                 <FiX />
             </div>
         </div>

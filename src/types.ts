@@ -69,7 +69,8 @@ export interface CartItemProps{
     title: string,
     image: string,
     price: number,
-    id: string
+    id: string,
+    onDelete: () => void
 };
 
 export interface SummaryAmountProps{
