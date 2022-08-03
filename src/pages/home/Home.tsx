@@ -16,7 +16,7 @@ function Home() {
         <Background bubbles explore={false}>
             <div className={classes.container}>
                 <Header active={home} />
-                <section>
+                <section className={classes.section}>
                     <Collections />
                     <Categories />
                     <Categories />

@@ -122,3 +122,52 @@
     0%{transform: translateY(200px); opacity: 0;}
     100%{transform: translateY(0); opacity: 1;}
 }
+
+/* responsive design */
+
+@media (max-width: 1200px) {
+    .container {
+        display: block;
+        overflow: hidden;
+        width: 800px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .linksContainer{
+        display: none;
+    }
+}
+@media (max-width: 800px) {
+    .container {
+        width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
+        height: fit-content;
+    }
+    .banner{
+        height: 350px;
+        border-radius: 15px;
+    }
+    .backdrop{
+        padding: 15px;
+    }
+    .backdrop p, .animate p{
+        width: 100%;
+    }
+    .backdrop .button{
+        margin-top: 5px;
+    }
+}
+@media (max-width: 400px) {
+    .banner{
+        height: 300px;
+    }
+    .backdrop h2, .animate h2{
+        font-size: 20px;
+    }
+    .backdrop p, .animate p{
+        width: 100%;
+        font-size: 15px;
+        opacity: 0.9;
+    }
+}

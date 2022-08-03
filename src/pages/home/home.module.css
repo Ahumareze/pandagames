@@ -3,9 +3,16 @@
     height: 100vh;
     overflow-y: scroll;
 }
-section{
+.section{
     width: 1100px;
     margin-right: auto;
     margin-left: auto;
     margin-top: 60px;
+}
+@media (max-width: 1200px) {
+    .section {
+        width: 100%;
+        margin-right: none;
+        margin-left: none;
+    }
 }

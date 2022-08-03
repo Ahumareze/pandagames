@@ -23,7 +23,9 @@ function Collections() {
 
     return (
         <div className={classes.container}>
-            <Banner title={active?.title} image={active?.image} details={active?.details} />
+            <div>
+                <Banner title={active?.title} image={active?.image} details={active?.details} />
+            </div>
             <div className={classes.linksContainer}>
                 {collections.map((i, idx) => (
                     <Item 
