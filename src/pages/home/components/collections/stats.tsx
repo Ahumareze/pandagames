@@ -3,12 +3,15 @@ import React from 'react';
 //styles
 import classes from './collections.module.css';
 
-function stats() {
+function Stats() {
     return (
-        <div>
-            
+        <div className={classes.stats}>
+            <div className={classes.activeStat} />
+            <div />
+            <div />
+            <div />
         </div>
     );
-}
+};
 
-export default stats;
+export default Stats;

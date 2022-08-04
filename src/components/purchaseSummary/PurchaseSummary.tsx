@@ -41,9 +41,11 @@ const PurchaseSummary:FC<PurchaseSummaryProps> = ({onClick}):JSX.Element => {
             let price = 0;
             cartData.map((i: any) => {
                 const newPrice = price + i.mainPrice;
-                price = newPrice
+                price = newPrice;
+
+                return null
             });
-            setTotalPrice(price)
+            setTotalPrice(price);
         }
     }, [cartData])
 

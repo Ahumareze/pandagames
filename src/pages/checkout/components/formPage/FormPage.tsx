@@ -71,6 +71,8 @@ function FormPage() {
         console.log(data)
     }
 
+    handleSubmit();
+
     return (
         <div className={classes.formContainer}>
             <p className={classes.intro}>Add the address you would like to recieve your parcel</p>

@@ -14,5 +14,7 @@
         width: 100%;
         margin-right: none;
         margin-left: none;
+        padding: 0 15px;
+        box-sizing: border-box;
     }
 }

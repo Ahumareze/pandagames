@@ -30,6 +30,7 @@
     font-family: sans-serif;
     margin-top: 10px;
     opacity: 0.9;
+    overflow: hidden;
 }
 .extraTags{
     height: fit-content;
@@ -59,4 +60,19 @@
 }
 .platforms img:hover{
     opacity: 0.8;
+}
+
+@media (max-width: 530px) {
+    .container{
+        padding: 0;
+    }
+    .container .mainImage{
+        height: 110px;
+    }
+    .platforms{
+        display: none;
+    }
+    .extraTags{
+        display: block;
+    }
 }

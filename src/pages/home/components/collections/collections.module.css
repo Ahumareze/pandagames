@@ -123,15 +123,41 @@
     100%{transform: translateY(0); opacity: 1;}
 }
 
-/* responsive design */
+.stats{
+    width: 100%;
+    display: none;
+    margin-top: 20px;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 15px;
+}
+.stats div{
+    height: 12px;
+    width: 12px;
+    background-color: #fff;
+    border-radius: 10px;
+    opacity: 0.5;
+}
+.stats .activeStat{
+    opacity: 0.9;
+}
+
+/************** responsive design *************/
 
 @media (max-width: 1200px) {
     .container {
         display: block;
+        height: fit-content;
         overflow: hidden;
         width: 800px;
         margin-right: auto;
         margin-left: auto;
+    }
+    .banner{
+        height: 400px;
+    }
+    .stats{
+        display: flex;
     }
     .linksContainer{
         display: none;
@@ -140,7 +166,6 @@
 @media (max-width: 800px) {
     .container {
         width: 100%;
-        padding: 0 15px;
         box-sizing: border-box;
         height: fit-content;
     }
@@ -158,9 +183,10 @@
         margin-top: 5px;
     }
 }
+
 @media (max-width: 400px) {
     .banner{
-        height: 300px;
+        height: 250px;
     }
     .backdrop h2, .animate h2{
         font-size: 20px;
@@ -170,4 +196,7 @@
         font-size: 15px;
         opacity: 0.9;
     }
+    /* .stats{
+        display: flex;
+    } */
 }
