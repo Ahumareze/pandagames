@@ -7,9 +7,6 @@ import classes from './Item.module.css';
 import { CartItemProps } from '../../../../types';
 
 //icons
-import macos from '../../../../assets/icons/macos.png';
-import ps4 from '../../../../assets/icons/ps4.png';
-import windows from '../../../../assets/icons/windows.png';
 import { FiX } from 'react-icons/fi';
 
 //component
@@ -34,9 +31,9 @@ const Item:FC<CartItemProps> = ({title, image, price, id, onDelete}):JSX.Element
                     <p>N{price.toLocaleString()}</p>
                 </div>
                 <div className={classes.platforms}>
-                    <img alt='' src={ps4} />
+                    {/* <img alt='' src={ps4} />
                     <img alt='' src={macos} />
-                    <img alt='' src={windows} />
+                    <img alt='' src={windows} /> */}
                 </div>
             </div>
 

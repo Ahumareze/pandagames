@@ -43,7 +43,7 @@
 }
 .price{
     width: 100%;
-    color: #F4900C;
+    color: var(--orange);
     font-size: 17px;
 }
 .platforms{
@@ -54,14 +54,17 @@
     gap: 10px;
     align-items: center;
 }
-.platforms img{
-    width: 20px;
+.platforms .psImg{
+    width: fit-content;
+    margin: 0;
+    color: #fff;
     opacity: 0.5;
 }
-.platforms img:hover{
-    opacity: 0.8;
+.platforms .xboxImg{
+    width: 20px;
+    opacity: 0.5;
+    color: #fff;
 }
-
 @media (max-width: 530px) {
     .container{
         padding: 0;

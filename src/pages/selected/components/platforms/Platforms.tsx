@@ -3,10 +3,7 @@ import React, { FC } from 'react';
 //styles
 import classes from './platforms.module.css';
 
-//images
-import macos from '../../../../assets/icons/macos.png';
-import ps4 from '../../../../assets/icons/ps4.png';
-import windows from '../../../../assets/icons/windows.png';
+//types
 import { platformsProps } from '../../../../types';
 
 interface PlatformProps{
@@ -17,13 +14,13 @@ const Platform:FC<PlatformProps> = ({value}):JSX.Element => {
 
     let container;
 
-    if(value === 'ps4'){
-        container = <img src={ps4} alt='' /> 
-    }else if(value === 'macos'){
-        container = <img src={macos} alt='' />
-    }else if(value === 'windows'){
-        container = <img src={windows} alt='' />
-    };
+    // if(value === 'ps4'){
+    //     container = <img src={ps4} alt='' /> 
+    // }else if(value === 'macos'){
+    //     container = <img src={macos} alt='' />
+    // }else if(value === 'windows'){
+    //     container = <img src={windows} alt='' />
+    // };
 
     return(
         <>

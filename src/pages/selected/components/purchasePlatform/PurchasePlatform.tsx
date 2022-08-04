@@ -5,11 +5,10 @@ import { PurchasePlatformProps } from '../../../../types';
 import classes from './purchasePlatform.module.css';
 
 //icons
-import macos from '../../../../assets/icons/macos.png';
 // import ps4 from '../../../../assets/icons/ps4.png';
 // import windows from '../../../../assets/icons/windows.png';
 
-const PurchasePlatform:FC<PurchasePlatformProps> = ({name, active, add, remove}):JSX.Element => {
+const PurchasePlatform:FC<PurchasePlatformProps> = ({name, price, active, add, remove}):JSX.Element => {
 
     const clickHandler = () => {
         if(active){
@@ -22,8 +21,9 @@ const PurchasePlatform:FC<PurchasePlatformProps> = ({name, active, add, remove})
     return (
         <div className={`${classes.contianer} ${active && classes.active}`} onClick={clickHandler}>
             <div className={classes.box}>
-                <img src={macos} alt='' />
-                <p>{name}</p>
+                <img src={''} alt='' />
+                <p className={classes.title}>{name}</p>
+                <p className={classes.price}>N{(price).toLocaleString()}</p>
             </div>
         </div>
     );

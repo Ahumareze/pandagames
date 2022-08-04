@@ -27,9 +27,11 @@ export const addToCart = (item: object) => {
         if(localData){
             const parsedData = JSON.parse(localData);
             parsedData.push(item);
+            dispatch(setCartData(parsedData));
             localStorage.setItem(cartName, JSON.stringify(parsedData));
         }else{
             arr.push(item);
+            dispatch(setCartData(arr));
             localStorage.setItem(cartName, JSON.stringify(arr));
         }
     }

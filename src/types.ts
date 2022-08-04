@@ -135,6 +135,7 @@ export interface SelectCityInputProps{
 
 export interface PurchasePlatformProps{
     name: string,
+    price: number,
     active: boolean,
     add: () => void,
     remove: () => void
@@ -142,4 +143,10 @@ export interface PurchasePlatformProps{
 
 export interface SelectedGameDetailsProps{
     details: string
+};
+
+export interface AddedToCartProps{
+    game: string,
+    price: number,
+    onClose: () => void
 }

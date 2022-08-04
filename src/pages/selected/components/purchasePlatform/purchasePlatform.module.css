@@ -1,5 +1,5 @@
 .contianer{
-    height: 80px;
+    height: 100px;
     width: 100%;
     background: var(--secondary);
     /* border: 1px solid var(--button); */
@@ -29,8 +29,14 @@
 .box img{
     height: 20px;
 }
-.box p{
+.box .title{
     font-size: 16px;
     margin: 0;
     margin-top: 3px;
+}
+.box .price{
+    font-size: 16px;
+    margin-top: 0;
+    color: #F4900C;
+    margin-top: 10px;
 }

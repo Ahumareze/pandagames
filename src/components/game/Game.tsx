@@ -6,12 +6,15 @@ import classes from './game.module.css';
 //types
 import { GameProps } from '../../types';
 
-
-//icons
-import ps4 from '../../assets/icons/ps4.png';
-import macos from '../../assets/icons/macos.png';
-import windows from '../../assets/icons/windows.png';
+//components
 import { useNavigate } from 'react-router-dom';
+
+//utilities
+import { ps4, ps5, xbox } from '../../utilities/platforms';
+
+interface GamePlatformProps{
+    name: string
+}
 
 
 const Game:FC<GameProps> = ({title, image, prices, id}):JSX.Element => {
@@ -63,6 +66,23 @@ const Game:FC<GameProps> = ({title, image, prices, id}):JSX.Element => {
                 {main}
             </>
         )
+    };
+
+    const Platform:FC<GamePlatformProps> = ({name}):JSX.Element => {
+        let container;
+
+        if(name === 'ps4'){
+            container = <p className={classes.psImg}>{name}</p>
+        }else if(name === 'ps5'){
+            container = <p className={classes.psImg}>{name}</p>
+        }else{
+            container = <img src={xbox} className={classes.xboxImg}/>
+        }
+        return(
+            <>
+                {container}
+            </>
+        )
     }
 
     return (
@@ -72,9 +92,11 @@ const Game:FC<GameProps> = ({title, image, prices, id}):JSX.Element => {
             <div className={classes.extraTags}>
                 <PricesContainer />
                 <div className={classes.platforms}>
-                    <img src={ps4} alt='' />
-                    <img src={macos} alt='' />
-                    <img src={windows} alt='' />
+                    {
+                        prices.map((i: any, idx: number) => (
+                            <Platform name={i.name} key={idx}/>
+                        ))
+                    }
                 </div>
             </div>
         </div>

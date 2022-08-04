@@ -18,6 +18,7 @@
     import { IRootState } from '../../redux/reducers/mainReducer';
     import PurchasePlatform from './components/purchasePlatform/PurchasePlatform';
     import Details from './components/details/Details';
+    import { AddedToCart } from '../../components/animations';
 
     function Selected() {
         //initialized
@@ -30,6 +31,7 @@
         //local state
         const [prices, setPrices] = useState<Array<object>>([]);
         const [mainPrice, setMainPrice] = useState<number>(0);
+        const [addedToCart, setAddedToCart] = useState<boolean>(false);
 
         useEffect(() => {
             if(id){
@@ -71,7 +73,8 @@
                 mainPrice
             }
 
-            dispatch(addToCart(arr))
+            dispatch(addToCart(arr));
+            setAddedToCart(true)
         }
 
         let container;
@@ -119,6 +122,7 @@
                                 {selectedGame.prices.map((i: any, idx: number) => (
                                         <PurchasePlatform 
                                             name={i.name}
+                                            price={i.price}
                                             active={prices.includes(i)}
                                             add={() => addPlatform(i)}
                                             remove={() => removePlatform(i)}
@@ -138,6 +142,7 @@
                 <div className={classes.container}>
                     <Header active={collectionsLink} />
                     {container}
+                    {addedToCart && <AddedToCart game={selectedGame.title} price={mainPrice} onClose={() => setAddedToCart(false)} />}
                 </div>
             </Background>
         );
