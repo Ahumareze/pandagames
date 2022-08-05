@@ -9,6 +9,9 @@
     margin-left: auto;
     margin-top: 50px;
     padding-bottom: 50px;
+    
+}
+.sectionContainer{
     display: grid;
     grid-template-columns: 600px 1fr;
     gap: 30px;

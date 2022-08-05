@@ -14,11 +14,14 @@
     import { useDispatch, useSelector } from 'react-redux';
     import { fetchGames, addToCart } from '../../redux/actions';
     import { useParams } from 'react-router-dom';
-
-    import { IRootState } from '../../redux/reducers/mainReducer';
     import PurchasePlatform from './components/purchasePlatform/PurchasePlatform';
     import Details from './components/details/Details';
     import { AddedToCart } from '../../components/animations';
+
+    //types
+    import { IRootState } from '../../redux/reducers/mainReducer';
+import Loader from './components/loader/Loader';
+    
 
     function Selected() {
         //initialized
@@ -27,6 +30,7 @@
 
         //redux state
         const selectedGame = useSelector((state: IRootState) => state.selectedGame);
+        const loading = useSelector((state: IRootState) => state.loading);
 
         //local state
         const [prices, setPrices] = useState<Array<object>>([]);
@@ -82,60 +86,68 @@
         if(selectedGame){
             container = (
                 <section className={classes.section}>
-                    <div>
-                        <HeaderDetails 
-                            collection={selectedGame.collection}
-                            collectionLink={selectedGame.collectionLink}
-                            title={selectedGame.title}
-                            rating={selectedGame.rating}
-                            age={selectedGame.age}
-                        />
-                        <Banners
-                            img1={selectedGame.image}
-                            img2={selectedGame.image}
-                            img3={selectedGame.image}
-                            img4={selectedGame.image}
-                        />
-                        <Details details={`Embark on a journey across Teyvat to find your lost sibling and seek answers from The Seven — the gods of each element. Explore this wondrous world, join forces with a diverse range of characters, and unravel the countless mysteries that Teyvat holds.
-                            Harness the seven elements to unleash elemental reactions. Anemo, Electro, Hydro, Pyro, Cryo, Dendro, and Geo interact in all sorts of ways, and Vision wielders have the power to turn this to their advantage.
-                            Will you vaporize Hydro with Pyro, electro-charge it with Electro, or freeze it with Cryo? Your mastery of the elements will give you the upper hand in battle and exploration.`} 
-                        />
-                        <Platforms platforms={selectedGame.prices} />
-                        <div className={classes.developers}>
-                            <p className={classes.title}>Developers</p>
-                            <div className={classes.devStudios}>
-                                <p>Kurame Studios inc.</p>
+                    <div className={classes.sectionContainer}>
+                        <div>
+                            <HeaderDetails 
+                                collection={selectedGame.collection}
+                                collectionLink={selectedGame.collectionLink}
+                                title={selectedGame.title}
+                                rating={selectedGame.rating}
+                                age={selectedGame.age}
+                            />
+                            <Banners
+                                img1={selectedGame.image}
+                                img2={selectedGame.image}
+                                img3={selectedGame.image}
+                                img4={selectedGame.image}
+                            />
+                            <Details details={`Embark on a journey across Teyvat to find your lost sibling and seek answers from The Seven — the gods of each element. Explore this wondrous world, join forces with a diverse range of characters, and unravel the countless mysteries that Teyvat holds.
+                                Harness the seven elements to unleash elemental reactions. Anemo, Electro, Hydro, Pyro, Cryo, Dendro, and Geo interact in all sorts of ways, and Vision wielders have the power to turn this to their advantage.
+                                Will you vaporize Hydro with Pyro, electro-charge it with Electro, or freeze it with Cryo? Your mastery of the elements will give you the upper hand in battle and exploration.`} 
+                            />
+                            <Platforms platforms={selectedGame.prices} />
+                            <div className={classes.developers}>
+                                <p className={classes.title}>Developers</p>
+                                <div className={classes.devStudios}>
+                                    <p>Kurame Studios inc.</p>
+                                </div>
+                            </div>
+                            <div className={classes.developers}>
+                                <p className={classes.title}>Release date</p>
+                                <div className={classes.releaseDate}>
+                                    <p>July 14th, 2022</p>
+                                </div>
                             </div>
                         </div>
-                        <div className={classes.developers}>
-                            <p className={classes.title}>Release date</p>
-                            <div className={classes.releaseDate}>
-                                <p>July 14th, 2022</p>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div className={classes.purchaseDiv}>
-                        <div className={classes.price}>N{(mainPrice).toLocaleString()}</div>
-                        <div className={classes.buttonsContainer}>
-                            <div className={classes.purchasePlatformContianer}>
-                                {selectedGame.prices.map((i: any, idx: number) => (
-                                        <PurchasePlatform 
-                                            name={i.name}
-                                            price={i.price}
-                                            active={prices.includes(i)}
-                                            add={() => addPlatform(i)}
-                                            remove={() => removePlatform(i)}
-                                            key={idx} 
-                                        />
-                                ))}
+                        <div className={classes.purchaseDiv}>
+                            <div className={classes.price}>N{(mainPrice).toLocaleString()}</div>
+                            <div className={classes.buttonsContainer}>
+                                <div className={classes.purchasePlatformContianer}>
+                                    {selectedGame.prices.map((i: any, idx: number) => (
+                                            <PurchasePlatform 
+                                                name={i.name}
+                                                price={i.price}
+                                                active={prices.includes(i)}
+                                                add={() => addPlatform(i)}
+                                                remove={() => removePlatform(i)}
+                                                key={idx} 
+                                            />
+                                    ))}
+                                </div>
+                                <PrimaryButton title={'add to cart'} onClick={addToCartHandler} />
                             </div>
-                            <PrimaryButton title={'add to cart'} onClick={addToCartHandler} />
                         </div>
                     </div>
                 </section>
             )
-        }
+        };
+
+        const loader = (
+            <section className={classes.section}>
+                <Loader />
+            </section>
+        )
 
         return (
             <Background bubbles={false} explore={false}>
