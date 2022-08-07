@@ -149,4 +149,9 @@ export interface AddedToCartProps{
     game: string,
     price: number,
     onClose: () => void
+};
+
+export interface SearchSuggestionProps{
+    name: string,
+    onSelect: () => void
 }

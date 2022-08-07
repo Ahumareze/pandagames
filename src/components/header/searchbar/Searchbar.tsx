@@ -9,7 +9,9 @@ import {FiSearch} from 'react-icons/fi';
 function Searchbar() {
     return (
         <div className={classes.searhBar}>
-            <input placeholder='Search games...' />
+            <div className={classes.mainSearchContainer}>
+                <input placeholder='Search games...' />
+            </div>
             <div className={classes.searchButton}>
                 <FiSearch size={18} />
             </div>

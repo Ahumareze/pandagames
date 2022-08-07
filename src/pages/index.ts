@@ -4,6 +4,7 @@ import Collection from "./collection/Collection";
 import Selected from "./selected/Selected";
 import Cart from "./cart/Cart";
 import Checkout from "./checkout/Checkout";
+import Search from "./search/Search";
 
 export {
     Home,
@@ -11,5 +12,6 @@ export {
     Collection,
     Selected,
     Cart,
-    Checkout
+    Checkout,
+    Search
 }

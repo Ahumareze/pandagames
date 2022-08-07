@@ -6,7 +6,18 @@ import './App.css';
 //components
 import {Route, Routes} from 'react-router-dom';
 
-import { Home, Collections, Collection, Selected, Cart, Checkout } from './pages';
+//pages
+import {
+  Home,
+  Collection,
+  Collections,
+  Selected,
+  Cart,
+  Checkout,
+  Search
+} from './pages';
+
+
 
 function App() {
   return (
@@ -18,6 +29,7 @@ function App() {
         <Route path='/games/:id' element={<Selected />} />
         <Route path='/cart' element={<Cart />} />
         <Route path='/checkout' element={<Checkout />} />
+        <Route path='/search' element={<Search />} />
       </Routes>
     </div>
   );

@@ -1,0 +1,91 @@
+.container{
+    overflow: hidden;
+    height: 100vh;
+    overflow-y: scroll;
+}
+.searchBanner{
+    height: 400px;
+    width: 100vw;
+    background-image: url('../../assets//images/search_banner.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+.searchBackground{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding-top: 100px;
+}
+.searchContainer{
+    height: fit-content;
+    width: 500px;
+    background-color: #fff;
+    border-radius: 8px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/***** Search Bar styles *******/
+.main{
+    height: 44px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 50px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+.main input{
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    box-sizing: border-box;
+    border: none;
+    padding-left: 10px;
+    font-size: 16px;
+}
+.main input:focus{
+    outline: none;
+}
+.searchButton{
+    height: 100%;
+    width: 100%;
+    border-radius: 4px;
+    font-size: 20px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary);
+    cursor: pointer;
+}
+.searchButton:hover{
+    animation: searchIcon 0.5s ease forwards;
+}
+@keyframes searchIcon {
+    100%{
+        transform: scale(1.2);
+    }
+}
+
+/***** Suggestions styles *******/
+.suggestionsContainer{
+    height: fit-content;
+    width: 100%;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    overflow: hidden;
+}
+.suggestion{
+    width: 100%;
+    padding: 10px 0;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding-left: 15px;
+    font-family: sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+}
+.suggestion:hover{
+    background-color: rgb(219, 230, 255);
+}
