@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 
 //types
 import { BackgroundProps } from '../../types';
@@ -21,6 +21,9 @@ import { IRootState } from '../../redux/reducers/mainReducer';
 const Background:FC<BackgroundProps> = ({children, bubbles, explore}) => {
     //initialization
     const dispatch = useDispatch();
+
+    //localstate
+    const [closeDrawer, setCloseDrawer] = useState<boolean>(false);
 
     //redux state
     const openSideBarState = useSelector((state: IRootState) => state.openSideBar);
@@ -45,12 +48,20 @@ const Background:FC<BackgroundProps> = ({children, bubbles, explore}) => {
         </div>
     );
 
+    const handleCloseDrawer = (value: boolean) => {
+        setCloseDrawer(true)
+        setTimeout(() => {
+            dispatch(openSideBar(value));
+            setCloseDrawer(false)
+        }, 700);
+    }
+
     const sideBar = (
         <div className={classes.sideBar}>
-            <div className={classes.closeSection} />
-            <div className={classes.mainSideBar}>
+            <div className={classes.closeSection} onClick={() => handleCloseDrawer(false)}/>
+            <div className={`${classes.mainSideBar} ${closeDrawer && classes.slideOut}`}>
                 <div className={classes.mainSideBarClose}>
-                    <div onClick={() => dispatch(openSideBar(false))}>
+                    <div onClick={() => handleCloseDrawer(false)}>
                         <FiX />
                     </div>
                 </div>

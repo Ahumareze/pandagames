@@ -113,6 +113,17 @@
     height: 100%;
     width: 100%;
     background: var(--background);
+    animation: slideIn 0.7s ease forwards;
+}
+@keyframes slideIn {
+    0%{transform: translateX(300px);}
+    100%{transform: translateX(0);}
+}
+.slideOut{
+    animation: slideOut 0.7s ease forwards;
+}
+@keyframes slideOut {
+    100%{transform: translateX(300px);}
 }
 .mainSideBarClose{
     height: 70px;
