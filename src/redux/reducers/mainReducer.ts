@@ -5,7 +5,8 @@ const initialState = {
     collections: null,
     fetchError: false,
     selectedGame: null,
-    cartData: null
+    cartData: null,
+    openSideBar: false
 };
 
 export type IRootState = ReturnType<typeof reducer>;
@@ -21,7 +22,9 @@ const reducer = (state = initialState, action: any) =>{
         case(actionTypes.SETGAME):
             return {...state, selectedGame: action.value};
         case(actionTypes.SETCARTDATA):
-            return {...state, cartData: action.value}
+            return {...state, cartData: action.value};
+        case(actionTypes.OPENSIDEBAR):
+            return {...state, openSideBar: action.value}
     }
     return state;
 };

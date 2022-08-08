@@ -56,6 +56,13 @@ export const removeItem = (id: number) => {
             localStorage.setItem(cartName, JSON.stringify(parsedData));
         }
     }
+};
+
+export const openSideBar = (value: boolean) => {
+    return{
+        type: actionTypes.OPENSIDEBAR,
+        value
+    }
 }
 
 const setCartData = (value: Array<object>) => {

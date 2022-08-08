@@ -98,3 +98,31 @@
     font-family: sans-serif;
     font-weight: 500;
 }
+
+/****** Responsive Header  **********/
+.miniHeader{
+    height: 70px;
+    padding: 15px;
+    box-sizing: border-box;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100px 1fr;
+}
+.miniHeaderComponents{
+    height: 100%;
+    width: 100%;
+    /* border: 1px solid #fff; */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 15px;
+}
+.miniHeaderComponents div{
+    height: 100%;
+    width: 40px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    color: rgb(212, 217, 255);
+    font-size: 25px;
+}
