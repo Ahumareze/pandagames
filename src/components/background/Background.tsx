@@ -12,15 +12,18 @@ import { FiX } from 'react-icons/fi';
 
 //components
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { openSideBar } from '../../redux/actions';
 
 //types
 import { IRootState } from '../../redux/reducers/mainReducer';
+import { width } from '../../utilities/dimensions';
 
 
 const Background:FC<BackgroundProps> = ({children, bubbles, explore}) => {
     //initialization
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     //localstate
     const [closeDrawer, setCloseDrawer] = useState<boolean>(false);
@@ -28,19 +31,23 @@ const Background:FC<BackgroundProps> = ({children, bubbles, explore}) => {
     //redux state
     const openSideBarState = useSelector((state: IRootState) => state.openSideBar);
 
-    const animation = (
-        <div className={classes.bubbles}>
-            <div />
-            <div />
-            <div />
-            <div />
-            <div />
-            <div />
-            <div />
-            <div />
-            <div />
-        </div>
-    );
+    let animation;
+    if(width > 800){
+        animation = (
+            <div className={classes.bubbles}>
+                <div />
+                <div />
+                <div />
+                <div />
+                <div />
+                <div />
+                <div />
+                <div />
+                <div />
+            </div>
+        );
+    }
+    
 
     const exploreContainer = (
         <div className={classes.explore}>
@@ -54,6 +61,11 @@ const Background:FC<BackgroundProps> = ({children, bubbles, explore}) => {
             dispatch(openSideBar(value));
             setCloseDrawer(false)
         }, 700);
+    };
+
+    const handleNavigation = (location: string) => {
+        dispatch(openSideBar(false));
+        navigate(location)
     }
 
     const sideBar = (
@@ -66,9 +78,9 @@ const Background:FC<BackgroundProps> = ({children, bubbles, explore}) => {
                     </div>
                 </div>
                 <div className={classes.sideBarLinks}>
-                    <div className={classes.div}> Discover </div>
-                    <div className={classes.div}> Collections </div>
-                    <div className={classes.cartNav}> <p>Cart</p> <div className={classes.cartNumber}>1</div> </div>
+                    <div className={classes.div} onClick={() => handleNavigation('/')}> Discover </div>
+                    <div className={classes.div} onClick={() => handleNavigation('/collections')}> Collections </div>
+                    <div className={classes.cartNav} onClick={() => handleNavigation('/cart')}> <p>Cart</p> <div className={classes.cartNumber}>1</div> </div>
                 </div>
             </div>
         </div>
