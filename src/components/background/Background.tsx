@@ -30,6 +30,7 @@ const Background:FC<BackgroundProps> = ({children, bubbles, explore}) => {
 
     //redux state
     const openSideBarState = useSelector((state: IRootState) => state.openSideBar);
+    const cartData = useSelector((state: IRootState) => state.cartData);
 
     let animation;
     if(width > 800){
@@ -80,7 +81,7 @@ const Background:FC<BackgroundProps> = ({children, bubbles, explore}) => {
                 <div className={classes.sideBarLinks}>
                     <div className={classes.div} onClick={() => handleNavigation('/')}> Discover </div>
                     <div className={classes.div} onClick={() => handleNavigation('/collections')}> Collections </div>
-                    <div className={classes.cartNav} onClick={() => handleNavigation('/cart')}> <p>Cart</p> <div className={classes.cartNumber}>1</div> </div>
+                    <div className={classes.cartNav} onClick={() => handleNavigation('/cart')}> <p>Cart</p> <div className={classes.cartNumber}>{cartData?.length}</div> </div>
                 </div>
             </div>
         </div>

@@ -51,10 +51,10 @@ const Header:FC<HeaderProps> = ({active}):JSX.Element => {
 
             </div>
             <div className={classes.miniHeaderComponents}>
-                <div>
+                <div onClick={() => handleNavigation('/search')}>
                     <FiSearch />
                 </div>
-                <div>
+                <div onClick={() => handleNavigation('/cart')}>
                     <FiShoppingCart />
                 </div>
                 <div onClick={() => dispatch(openSideBar(true))}>
