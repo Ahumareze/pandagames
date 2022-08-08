@@ -148,7 +148,7 @@
     padding: 0 15px;
     box-sizing: border-box;
 }
-.sideBarLinks div{
+.sideBarLinks .div{
     padding: 15px 0;
     width: 100%;
     display: grid;
@@ -161,4 +161,36 @@
 }
 .sideBarLinks div:hover{
     background-color: var(--primary);
+}
+.cartNav{
+    padding: 15px 0;
+    width: 100%;
+    text-align: center;
+    font-size: 17px;
+    color: rgb(212, 217, 255);
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.cartNav p{
+    margin: 0;
+    width: fit-content;
+}
+.cartNav .cartNumber{
+    height: 20px;
+    width: fit-content;
+    background-color: var(--orange);
+    color: #000;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    padding: 0 7px;
+    font-size: 15px;
+    font-family: sans-serif;
+    font-weight: 500;
 }

@@ -66,9 +66,9 @@ const Background:FC<BackgroundProps> = ({children, bubbles, explore}) => {
                     </div>
                 </div>
                 <div className={classes.sideBarLinks}>
-                    <div> Discover </div>
-                    <div> Collections </div>
-                    <div> Cart </div>
+                    <div className={classes.div}> Discover </div>
+                    <div className={classes.div}> Collections </div>
+                    <div className={classes.cartNav}> <p>Cart</p> <div className={classes.cartNumber}>1</div> </div>
                 </div>
             </div>
         </div>
