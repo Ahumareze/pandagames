@@ -141,3 +141,22 @@
         background-color: var(--secondary);
     }
 }
+@media (max-width: 900px) {
+    .section{
+        display: block;
+        width: 600px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+@media (max-width: 600px) {
+    .section{
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        box-sizing: border-box;
+    }
+    .dualInputFields{
+        grid-template-columns: 1fr;
+    }
+}
