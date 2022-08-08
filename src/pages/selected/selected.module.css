@@ -112,3 +112,27 @@
     margin: 0;
     padding-bottom: 3px;
 }
+@media (max-width: 1000px) {
+    .section{
+        width: 100%;
+    }
+    .sectionContainer{
+        display: block;
+        width: 600px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .purchaseDiv{
+        padding-top: 50px;
+    }
+}
+@media (max-width: 600px) {
+    .section{
+        padding: 0 15px;
+        padding-bottom: 50px;
+        box-sizing: border-box;
+    }
+    .sectionContainer{
+        width: 100%;
+    }
+}

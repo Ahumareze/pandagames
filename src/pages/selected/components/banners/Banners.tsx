@@ -14,7 +14,7 @@ const Banners:FC<SelectedBannerProps> = ({img1, img2, img3, img4}):JSX.Element =
                     <img src={img1} alt='' />
                     <img src={img2} alt='' />
                     <img src={img3} alt='' />
-                    <img src={img4} alt='' />
+                    {/* <img src={img4} alt='' /> */}
                 </div>
             </div>
         </div>

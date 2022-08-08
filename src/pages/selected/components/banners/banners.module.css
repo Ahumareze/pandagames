@@ -40,3 +40,8 @@
     0%{transform: scale(1);}
     100%{transform: scale(1.02); opacity: 1;}
 }
+@media (max-width: 600px) {
+    .bannerImage{
+        height: 200px;
+    }
+}

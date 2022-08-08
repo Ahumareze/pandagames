@@ -32,3 +32,17 @@
     display: grid;
     gap: 20px;
 }
+@media (max-width: 1000px) {
+    .section{
+        display: block;
+        width: 600px;
+    }
+}
+@media (max-width: 600px) {
+    .section{
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+        box-sizing: border-box;
+    }
+}
