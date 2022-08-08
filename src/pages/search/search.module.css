@@ -68,6 +68,21 @@
     }
 }
 
+/********** Responsive design ***********/
+@media (max-width: 500px) {
+    .searchBanner{
+        height: 300px;
+    }
+    .searchBackground{
+        padding-left: 15px;
+        padding-right: 15px;
+        box-sizing: border-box;
+    }
+    .searchContainer{
+        width: 100%;
+    }
+}
+
 /***** Suggestions styles *******/
 .suggestionsContainer{
     height: fit-content;
