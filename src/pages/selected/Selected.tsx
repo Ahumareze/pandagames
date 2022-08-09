@@ -99,7 +99,6 @@ import Loader from './components/loader/Loader';
                                 img1={selectedGame.image}
                                 img2={selectedGame.image}
                                 img3={selectedGame.image}
-                                img4={selectedGame.image}
                             />
                             <Details details={`Embark on a journey across Teyvat to find your lost sibling and seek answers from The Seven — the gods of each element. Explore this wondrous world, join forces with a diverse range of characters, and unravel the countless mysteries that Teyvat holds.
                                 Harness the seven elements to unleash elemental reactions. Anemo, Electro, Hydro, Pyro, Cryo, Dendro, and Geo interact in all sorts of ways, and Vision wielders have the power to turn this to their advantage.

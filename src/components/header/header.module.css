@@ -37,6 +37,12 @@
     font-size: 16px;
     cursor: pointer;
 }
+.searchIcon{
+    width: fit-content;
+    font-size: 20px;
+    color: var(--links);
+    cursor: pointer;
+}
 .cartLink{
     width: fit-content;
     margin: 0;

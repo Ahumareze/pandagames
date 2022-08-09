@@ -14,7 +14,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { IRootState } from '../../redux/reducers/mainReducer';
 
 //utilities
-import {home, collectionsLink, cart} from '../../utilities/links';
+import {home, collectionsLink, cart, search} from '../../utilities/links';
 import { width } from '../../utilities/dimensions';
 import { FiMenu, FiSearch, FiShoppingCart } from 'react-icons/fi';
 
@@ -64,7 +64,13 @@ const Header:FC<HeaderProps> = ({active}):JSX.Element => {
         <div className={classes.container}>
             <div className={classes.logoContainer}>PandaGames</div>
             <div className={classes.secondContainer}>
-                <Searchbar />
+                <div 
+                    className={classes.searchIcon}
+                    style={active === search ? {color: '#BCCFFF'} : {}}
+                    onClick={() => handleNavigation('/search')}
+                >
+                    <FiSearch />
+                </div>
                 <div 
                     className={classes.links} 
                     style={active === home ? {color: '#BCCFFF'} : {}}

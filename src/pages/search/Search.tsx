@@ -11,7 +11,7 @@ import { Background, Header } from '../../components';
 import { Suggestion } from './components';
 
 //utilities
-import { collectionsLink } from '../../utilities/links';
+import { search } from '../../utilities/links';
 
 const data = [
     'Genshin Impact',
@@ -67,7 +67,7 @@ function Search() {
     return (
         <Background bubbles={false} explore={false}>
             <div className={classes.container}>
-                <Header active={collectionsLink} />
+                <Header active={search} />
                 <div className={classes.searchBanner}>
                     <div className={classes.searchBackground}>
                         <div className={classes.searchContainer}>
