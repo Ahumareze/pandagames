@@ -32,10 +32,6 @@ const Header:FC<HeaderProps> = ({active}):JSX.Element => {
     };
 
     useEffect(() => {
-        console.log(cartData?.length);
-    }, [cartData])
-
-    useEffect(() => {
         dispatch(fetchCartData())
     }, [dispatch]);
 
