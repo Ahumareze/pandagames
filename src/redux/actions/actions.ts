@@ -3,7 +3,6 @@ import * as actionTypes from './actionTypes';
 import axios from 'axios';
 
 //utilities
-import games from "../../assets/data/games";
 import backendLink from '../../utilities/backendLink';
 import { cartName } from '../../utilities/localNames';
 import { GameProps } from '../../types';
@@ -31,13 +30,38 @@ export const fetchCollection = (category: string) => {
         axios.post(backendLink + '/collection', {category}).then(r => {
             dispatch(setLoading(false))
             dispatch(setCollection(r.data));
+            console.log(r.data)
         }).catch(e => {
             console.log(e);
             dispatch(setLoading(false))
         });
 
     }
+};
+
+export const fetchSelected = (id: string) => {
+    return(dispatch: (e: object) => void) => {
+
+        dispatch(setLoading(true));
+
+        axios.post(backendLink + '/selected', {id}).then(r => {
+            dispatch(setGame(r.data));
+            console.log(r.data)
+            dispatch(setLoading(false));
+        }).catch(e => {
+            console.log(e.response)
+            dispatch(setLoading(false));
+        })
+
+    }
+};
+
+export const fetchGames = () => {
+    return(dispatch: (e: object) => void) => {
+
+    }
 }
+
 
 export const addToCart = (item: object) => {
     return (dispatch: (e: object) => void) => {
@@ -97,12 +121,6 @@ const setCartData = (value: Array<object>) => {
         value
     }
 }
-
-export const fetchGames = (id: number) => {
-    return (dispatch: any) => {
-        dispatch(setGame(games[id]))
-    }
-};
 
 const setLoading = (value: boolean) => {
     return{

@@ -12,7 +12,7 @@
     import Banners from './components/banners/Banners';
     import Platforms from './components/platforms/Platforms';
     import { useDispatch, useSelector } from 'react-redux';
-    import { fetchGames, addToCart } from '../../redux/actions';
+    import { fetchSelected, addToCart } from '../../redux/actions';
     import { useParams } from 'react-router-dom';
     import PurchasePlatform from './components/purchasePlatform/PurchasePlatform';
     import Details from './components/details/Details';
@@ -20,7 +20,7 @@
 
     //types
     import { IRootState } from '../../redux/reducers/mainReducer';
-    // import Loader from './components/loader/Loader';
+    import Loader from './components/loader/Loader';
     
 
     function Selected() {
@@ -30,7 +30,7 @@
 
         //redux state
         const selectedGame = useSelector((state: IRootState) => state.selectedGame);
-        // const loading = useSelector((state: IRootState) => state.loading);
+        const loading = useSelector((state: IRootState) => state.loading);
 
         //local state
         const [prices, setPrices] = useState<Array<object>>([]);
@@ -39,8 +39,7 @@
 
         useEffect(() => {
             if(id){
-                const newId = JSON.parse(id)
-                dispatch(fetchGames(newId))
+                dispatch(fetchSelected(id))
             };
         }, [dispatch, id]);
 
@@ -89,16 +88,16 @@
                     <div className={classes.sectionContainer}>
                         <div>
                             <HeaderDetails 
-                                collection={selectedGame.collection}
-                                collectionLink={selectedGame.collectionLink}
-                                title={selectedGame.title}
+                                collection={selectedGame.category}
+                                collectionLink={selectedGame.categoryLink}
+                                title={selectedGame.name}
                                 rating={selectedGame.rating}
                                 age={selectedGame.age}
                             />
                             <Banners
-                                img1={selectedGame.image}
-                                img2={selectedGame.image}
-                                img3={selectedGame.image}
+                                img1={selectedGame.images[0]}
+                                img2={selectedGame.images[1]}
+                                img3={selectedGame.images[2]}
                             />
                             <Details details={`Embark on a journey across Teyvat to find your lost sibling and seek answers from The Seven — the gods of each element. Explore this wondrous world, join forces with a diverse range of characters, and unravel the countless mysteries that Teyvat holds.
                                 Harness the seven elements to unleash elemental reactions. Anemo, Electro, Hydro, Pyro, Cryo, Dendro, and Geo interact in all sorts of ways, and Vision wielders have the power to turn this to their advantage.
@@ -140,19 +139,21 @@
                     </div>
                 </section>
             )
-        };
+        }else{
+            container = <p>Error fetching game</p>
+        }
 
-        // const loader = (
-        //     <section className={classes.section}>
-        //         <Loader />
-        //     </section>
-        // )
+        const loader = (
+            <section className={classes.section}>
+                <Loader />
+            </section>
+        )
 
         return (
             <Background bubbles={false} explore={false}>
                 <div className={classes.container}>
                     <Header active={collectionsLink} />
-                    {container}
+                    {loading ? loader : container}
                     {addedToCart && <AddedToCart game={selectedGame.title} price={mainPrice} onClose={() => setAddedToCart(false)} />}
                 </div>
             </Background>

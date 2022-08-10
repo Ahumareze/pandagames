@@ -1,5 +1,5 @@
 export {
-    fetchGames,
+    fetchSelected,
     addToCart,
     fetchCartData,
     removeItem,

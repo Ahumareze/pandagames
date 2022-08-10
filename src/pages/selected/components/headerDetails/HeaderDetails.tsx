@@ -33,7 +33,7 @@ const HeaderDetails:FC<SelectedHeaderProps> = ({title, rating, collection, colle
     const navigate = useNavigate();
 
     const handleNavigation = () => {
-        navigate('/collections' + collectionLink)
+        navigate('/collections/' + collectionLink)
     }
 
     return (

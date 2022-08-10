@@ -3,6 +3,7 @@ import * as actionTypes from '../actions/actionTypes';
 const initialState = {
     loading: false,
     collections: null,
+    collection: null,
     fetchError: false,
     selectedGame: null,
     cartData: null,
@@ -24,7 +25,9 @@ const reducer = (state = initialState, action: any) =>{
         case(actionTypes.SETCARTDATA):
             return {...state, cartData: action.value};
         case(actionTypes.OPENSIDEBAR):
-            return {...state, openSideBar: action.value}
+            return {...state, openSideBar: action.value};
+        case(actionTypes.SETCOLLECTION):
+            return {...state, collection: action.value};
     }
     return state;
 };

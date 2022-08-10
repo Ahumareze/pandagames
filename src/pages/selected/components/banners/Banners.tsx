@@ -6,13 +6,8 @@ import { SelectedBannerProps } from '../../../../types';
 //styles
 import classes from './banners.module.css';
 
-//test images
-import img1 from '../../../../assets/devImages/games/genshin.jpg';
-import img2 from '../../../../assets/devImages/games/froza.jpg';
-import img3 from '../../../../assets/devImages/games/freefire.jpeg';
 
-
-const Banners:FC<SelectedBannerProps> = ():JSX.Element => {
+const Banners:FC<SelectedBannerProps> = ({img1, img2, img3}):JSX.Element => {
     const [active, setActive] = useState<string>(img1);
 
     return (

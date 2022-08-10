@@ -7,11 +7,12 @@ import { FiSearch } from 'react-icons/fi';
 import classes from './search.module.css';
 
 //components
-import { Background, Header } from '../../components';
+import { Background, Game, Header } from '../../components';
 import { Suggestion } from './components';
 
 //utilities
 import { search } from '../../utilities/links';
+import games from '../../assets/data/games';
 
 const data = [
     'Genshin Impact',
@@ -70,6 +71,10 @@ function Search() {
                 <Header active={search} />
                 <div className={classes.searchBanner}>
                     <div className={classes.searchBackground}>
+                        <div className={classes.intro}>
+                            <h1>Search Panda Games</h1>
+                            <p className={classes.introText}>Browse our extensive collections of well sorted games</p>
+                        </div>
                         <div className={classes.searchContainer}>
                             <div className={classes.main}>
                                 <input value={value} placeholder='Search Games ...' onChange={(e) => handleInput(e.target.value)} />
@@ -80,6 +85,29 @@ function Search() {
                             {container}
                         </div>
                     </div>
+                </div>
+
+                <div className={classes.mainGames}>
+                    <div className={classes.gamesContainer}>
+                        {games.map((i: any, idx: number) => (
+                            <Game
+                                title={i.name}
+                                image={i.image}
+                                prices={i.prices}
+                                key={idx}
+                                id={i.id}
+                            />
+                        ))}
+                        {games.map((i: any, idx: number) => (
+                            <Game
+                                title={i.name}
+                                image={i.image}
+                                prices={i.prices}
+                                key={idx}
+                                id={i.id}
+                            />
+                        ))}
+                </div>
                 </div>
             </div>
         </Background>
