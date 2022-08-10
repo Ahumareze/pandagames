@@ -5,7 +5,7 @@ import classes from './animations.module.css';
 
 //components
 import { PrimaryButton, SecondaryButton } from '../buttons/Button';
-// import Lottie from 'react-lottie';
+import Lottie from 'react-lottie';
 
 //types
 import { AddedToCartProps } from '../../types';
