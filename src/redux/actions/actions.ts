@@ -6,6 +6,7 @@ import axios from 'axios';
 import games from "../../assets/data/games";
 import backendLink from '../../utilities/backendLink';
 import { cartName } from '../../utilities/localNames';
+import { GameProps } from '../../types';
 
 export const fetchCollections = () => {
     return (dispatch: (e: object) => void) => {
@@ -25,10 +26,14 @@ export const fetchCollections = () => {
 export const fetchCollection = (category: string) => {
     return (dispatch: (e: object) => void) => {
 
+        dispatch(setLoading(true))
+
         axios.post(backendLink + '/collection', {category}).then(r => {
-            console.log(r.data)
+            dispatch(setLoading(false))
+            dispatch(setCollection(r.data));
         }).catch(e => {
-            console.log(e)
+            console.log(e);
+            dispatch(setLoading(false))
         });
 
     }
@@ -71,6 +76,13 @@ export const removeItem = (id: number) => {
         }
     }
 };
+
+const setCollection = (value: Array<GameProps>) => {
+    return {
+        type: actionTypes.SETCOLLECTION,
+        value
+    }
+}
 
 export const openSideBar = (value: boolean) => {
     return{
