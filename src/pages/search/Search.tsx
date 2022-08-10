@@ -8,7 +8,7 @@ import classes from './search.module.css';
 
 //components
 import { Background, Game, Header } from '../../components';
-import { Suggestion } from './components';
+import { Loader, Suggestion } from './components';
 
 //utilities
 import { search } from '../../utilities/links';
@@ -113,7 +113,7 @@ function Search() {
                 </div>
 
                 <div className={classes.mainGames}>
-                    {loading ? <div className={classes.lrd} /> : gamesContainer}
+                    {loading ? <Loader /> : gamesContainer}
                 </div>
             </div>
         </Background>
