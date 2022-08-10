@@ -1,0 +1,7 @@
+.mainContainer{
+    padding-top: 40px;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}

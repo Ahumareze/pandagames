@@ -21,11 +21,11 @@ function Loader() {
     };
 
     return (
-        <div>
+        <div className={classes.mainContainer}>
             <Lottie
                 options={defaultOptions}
-                height={100}
-                width={100}
+                height={120}
+                width={120}
             />
         </div>
     );
