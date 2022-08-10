@@ -63,13 +63,7 @@ const Header:FC<HeaderProps> = ({active}):JSX.Element => {
         <div className={classes.container}>
             <div className={classes.logoContainer}>PandaGames</div>
             <div className={classes.secondContainer}>
-                <div 
-                    className={classes.searchIcon}
-                    style={active === search ? {color: '#BCCFFF'} : {}}
-                    onClick={() => handleNavigation('/search')}
-                >
-                    <FiSearch />
-                </div>
+                
                 <div 
                     className={classes.links} 
                     style={active === home ? {color: '#BCCFFF'} : {}}
@@ -90,6 +84,13 @@ const Header:FC<HeaderProps> = ({active}):JSX.Element => {
                     onClick={() => handleNavigation('/cart')}
                 >
                     Cart {cartData?.length > 0 && cartNumber}
+                </div>
+                <div 
+                    className={classes.searchIcon}
+                    style={active === search ? {color: '#BCCFFF'} : {}}
+                    onClick={() => handleNavigation('/search')}
+                >
+                    <FiSearch />
                 </div>
             </div>
         </div>

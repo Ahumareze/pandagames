@@ -58,7 +58,22 @@ export const fetchSelected = (id: string) => {
 
 export const fetchGames = () => {
     return(dispatch: (e: object) => void) => {
+        dispatch(setLoading(true));
 
+        axios.get(backendLink + '/games').then(r => {
+            dispatch(setLoading(false));
+            console.log(r.data)
+        }).catch(e => {
+            dispatch(setLoading(false));
+            console.log(e)
+        })
+    }
+};
+
+const setGames = (value: Array<object>) => {
+    return{
+        type: actionTypes.SETGAMES,
+        value
     }
 }
 

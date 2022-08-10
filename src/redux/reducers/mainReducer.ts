@@ -4,6 +4,7 @@ const initialState = {
     loading: false,
     collections: null,
     collection: null,
+    games: null,
     fetchError: false,
     selectedGame: null,
     cartData: null,
@@ -28,6 +29,9 @@ const reducer = (state = initialState, action: any) =>{
             return {...state, openSideBar: action.value};
         case(actionTypes.SETCOLLECTION):
             return {...state, collection: action.value};
+        case(actionTypes.SETGAMES):
+            return {...state, games: action.value}
+
     }
     return state;
 };

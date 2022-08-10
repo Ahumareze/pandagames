@@ -42,6 +42,8 @@
     font-size: 20px;
     color: var(--links);
     cursor: pointer;
+    display: grid;
+    align-items: flex-end;
 }
 .cartLink{
     width: fit-content;
