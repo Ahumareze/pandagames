@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 //icons
 import { FiSearch } from 'react-icons/fi';
@@ -12,20 +12,28 @@ import { Suggestion } from './components';
 
 //utilities
 import { search } from '../../utilities/links';
-import games from '../../assets/data/games';
-
-const data = [
-    'Genshin Impact',
-    'Free Fire IV',
-    'Red Dead Redemption 4',
-    'Froza Horizon'
-]
+import { useDispatch, useSelector } from 'react-redux';
+import { IRootState } from '../../redux/reducers/mainReducer';
+import { fetchGames } from '../../redux/actions/actions';
 
 
 function Search() {
+    //initialize
+    const dispatch = useDispatch();
+
+    //redux state
+    const searchData = useSelector((state: IRootState) => state.searchData);
+    const loading = useSelector((state: IRootState) => state.loading);
+    const games = useSelector((state: IRootState) => state.games);
+
+    //local state
     const [showSearch, setShowSearch] = useState<boolean>();
     const [value, setValue] = useState<string>('');
     const [items, setItems] = useState<Array<string>>([]);
+
+    useEffect(() => {
+        dispatch(fetchGames());
+    }, [])
 
     const handleInput = (e: string) => {
 
@@ -34,7 +42,7 @@ function Search() {
         if(e){
             setShowSearch(true);
             let emptyArr: string[] = [];
-            emptyArr = data.filter(i => {
+            emptyArr = searchData.filter((i: any) => {
                 return i.toLocaleLowerCase().startsWith(e.toLocaleLowerCase());
             });
             setItems(emptyArr)
@@ -59,6 +67,23 @@ function Search() {
                         name={i} 
                         onSelect={() => updateSuggestion(i)}
                         key={idx}
+                    />
+                ))}
+            </div>
+        )
+    };
+
+    let gamesContainer;
+    if(games){
+        gamesContainer = (
+            <div className={classes.gamesContainer}>
+                {games.map((i: any, idx: number) => (
+                    <Game
+                        title={i.name}
+                        image={i.images[0]}
+                        prices={i.prices}
+                        key={idx}
+                        id={i._id}
                     />
                 ))}
             </div>
@@ -88,26 +113,7 @@ function Search() {
                 </div>
 
                 <div className={classes.mainGames}>
-                    <div className={classes.gamesContainer}>
-                        {games.map((i: any, idx: number) => (
-                            <Game
-                                title={i.name}
-                                image={i.image}
-                                prices={i.prices}
-                                key={idx}
-                                id={i.id}
-                            />
-                        ))}
-                        {games.map((i: any, idx: number) => (
-                            <Game
-                                title={i.name}
-                                image={i.image}
-                                prices={i.prices}
-                                key={idx}
-                                id={i.id}
-                            />
-                        ))}
-                </div>
+                    {loading ? <div className={classes.lrd} /> : gamesContainer}
                 </div>
             </div>
         </Background>

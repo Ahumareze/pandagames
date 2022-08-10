@@ -59,16 +59,32 @@ export const fetchSelected = (id: string) => {
 export const fetchGames = () => {
     return(dispatch: (e: object) => void) => {
         dispatch(setLoading(true));
+        console.log('hello')
 
         axios.get(backendLink + '/games').then(r => {
+            let arr: string[] = [];
+            
+            r.data.map((i: any) => {
+                arr.push(i.name)
+            });
+
             dispatch(setLoading(false));
-            console.log(r.data)
+            dispatch(setGames(r.data));
+            dispatch(setSearchData(arr));
+            
         }).catch(e => {
             dispatch(setLoading(false));
             console.log(e)
         })
     }
 };
+
+const setSearchData = (value: Array<string>) => {
+    return{
+        type: actionTypes.SETSEARCHDATA,
+        value
+    }
+}
 
 const setGames = (value: Array<object>) => {
     return{
