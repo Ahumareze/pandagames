@@ -7,7 +7,6 @@ import classes from './home.module.css';
 import { Background, Header } from '../../components';
 import Collections from './components/collections/Collections';
 import Categories from './components/categories/Categories';
-import Loader from './components/loader/Loader';
 
 //utilities
 import { home } from '../../utilities/links';

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 //styles
 import classes from './collection.module.css';
@@ -12,9 +12,19 @@ import { useParams } from 'react-router-dom';
 
 //data
 import games from '../../assets/data/games';
+import { useDispatch } from 'react-redux';
+import { fetchCollection } from '../../redux/actions/actions';
 
 function Collection() {
+    //initialize
     const { id } = useParams();
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        if(id){
+            dispatch(fetchCollection(id))
+        }
+    }, [id, dispatch])
 
     return (
         <Background bubbles={false} explore={false}>

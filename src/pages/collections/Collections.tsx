@@ -70,8 +70,7 @@ function Collections() {
         <Background bubbles={false} explore>
             <div className={classes.container}>
                 <Header active={collectionsLink} />
-                {/* {loading ? loader : container} */}
-                {loader}
+                {loading ? loader : container}
             </div>
         </Background>
     );

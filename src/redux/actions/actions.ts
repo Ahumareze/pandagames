@@ -9,7 +9,9 @@ import { cartName } from '../../utilities/localNames';
 
 export const fetchCollections = () => {
     return (dispatch: (e: object) => void) => {
+
         dispatch(setLoading(true));
+
         axios.get(backendLink + '/collections').then(r => {
             dispatch(setLoading(false));
             dispatch(setCollections(r.data));
@@ -19,6 +21,18 @@ export const fetchCollections = () => {
         })
     }
 };
+
+export const fetchCollection = (category: string) => {
+    return (dispatch: (e: object) => void) => {
+
+        axios.post(backendLink + '/collection', {category}).then(r => {
+            console.log(r.data)
+        }).catch(e => {
+            console.log(e)
+        });
+
+    }
+}
 
 export const addToCart = (item: object) => {
     return (dispatch: (e: object) => void) => {

@@ -20,7 +20,7 @@
 
     //types
     import { IRootState } from '../../redux/reducers/mainReducer';
-import Loader from './components/loader/Loader';
+    // import Loader from './components/loader/Loader';
     
 
     function Selected() {
@@ -30,7 +30,7 @@ import Loader from './components/loader/Loader';
 
         //redux state
         const selectedGame = useSelector((state: IRootState) => state.selectedGame);
-        const loading = useSelector((state: IRootState) => state.loading);
+        // const loading = useSelector((state: IRootState) => state.loading);
 
         //local state
         const [prices, setPrices] = useState<Array<object>>([]);
@@ -142,11 +142,11 @@ import Loader from './components/loader/Loader';
             )
         };
 
-        const loader = (
-            <section className={classes.section}>
-                <Loader />
-            </section>
-        )
+        // const loader = (
+        //     <section className={classes.section}>
+        //         <Loader />
+        //     </section>
+        // )
 
         return (
             <Background bubbles={false} explore={false}>

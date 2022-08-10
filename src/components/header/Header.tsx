@@ -7,7 +7,6 @@ import { HeaderProps } from '../../types';
 import classes from './header.module.css';
 
 //components
-import Searchbar from './searchbar/Searchbar';
 import { useNavigate } from 'react-router-dom';
 import { fetchCartData, openSideBar } from '../../redux/actions';
 import { useDispatch, useSelector } from 'react-redux';

@@ -10,7 +10,7 @@ import { GameProps } from '../../types';
 import { useNavigate } from 'react-router-dom';
 
 //utilities
-import { ps4, ps5, xbox } from '../../utilities/platforms';
+import { xbox } from '../../utilities/platforms';
 
 interface GamePlatformProps{
     name: string
@@ -76,7 +76,7 @@ const Game:FC<GameProps> = ({title, image, prices, id}):JSX.Element => {
         }else if(name === 'ps5'){
             container = <p className={classes.psImg}>{name}</p>
         }else{
-            container = <img src={xbox} className={classes.xboxImg}/>
+            container = <img src={xbox} className={classes.xboxImg} alt=''/>
         }
         return(
             <>
