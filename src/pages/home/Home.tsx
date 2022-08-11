@@ -27,14 +27,18 @@ function Home() {
     const homeData = useSelector((state: IRootState) => state.homeData);
 
     useEffect(() => {
+        console.log(homeData)
+    }, [homeData])
+
+    useEffect(() => {
         dispatch(fetchHomeData())
-    }, []);
+    }, [dispatch]);
 
     let container;
     if(homeData){
         container = (
             <>
-                <Collections />
+                <Collections collections={homeData.collections.splice(0,4)} />
                 <Categories />
                 <Categories />
             </>

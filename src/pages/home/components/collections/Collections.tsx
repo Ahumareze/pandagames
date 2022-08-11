@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 
 //styles
 import classes from './collections.module.css';
 
 //data
-import collections from '../../../../assets/data/collections';
 import Banner from './Banner';
 import Item from './Item';
 import Stats from './stats';
@@ -12,13 +11,28 @@ import Stats from './stats';
 //utilities
 import { width } from '../../../../utilities/dimensions';
 
-function Collections() {
+interface CollectionsPropsObject{
+    name: string,
+    miniImage: string,
+    image: string,
+    link: string
+}
+
+interface CollectionsProps{
+    collections: Array<CollectionsPropsObject>
+}
+
+const Collections:FC<CollectionsProps> = ({collections}):JSX.Element => {
     const [active, setActive] = useState<any>();
     const [selected, setSelected] = useState<number>(0)
 
     useEffect(() => {
         setActive(collections[0])
     }, []);
+
+    useEffect(() => {
+        console.log(collections)
+    }, [collections])
 
     useEffect(() => {
         console.log(selected)
