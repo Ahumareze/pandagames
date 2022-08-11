@@ -32,7 +32,9 @@
     font-family: sans-serif;
     margin-top: 10px;
     opacity: 0.9;
+    white-space: nowrap;
     overflow: hidden;
+    text-overflow: ellipsis;
 }
 .extraTags{
     height: fit-content;
