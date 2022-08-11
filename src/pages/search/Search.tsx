@@ -33,7 +33,7 @@ function Search() {
 
     useEffect(() => {
         dispatch(fetchGames());
-    }, [])
+    }, [dispatch])
 
     const handleInput = (e: string) => {
 

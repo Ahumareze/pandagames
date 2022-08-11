@@ -4,5 +4,6 @@ export {
     fetchCartData,
     removeItem,
     openSideBar,
-    searchGames
+    searchGames,
+    fetchHomeData
 } from './actions'

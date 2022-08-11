@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 
 //styles
 import classes from './animations.module.css';
@@ -6,9 +6,6 @@ import classes from './animations.module.css';
 //components
 import { PrimaryButton, SecondaryButton } from '../buttons/Button';
 import Lottie from 'react-lottie';
-
-//types
-import { AddedToCartProps } from '../../types';
 import { useNavigate } from 'react-router-dom';
 
 // animations

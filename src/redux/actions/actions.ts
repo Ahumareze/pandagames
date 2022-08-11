@@ -7,6 +7,22 @@ import backendLink from '../../utilities/backendLink';
 import { cartName } from '../../utilities/localNames';
 import { GameProps } from '../../types';
 
+export const fetchHomeData = () => {
+    return (dispatch: (e: object) => void) => {
+
+        dispatch(setLoading(true))
+
+        axios.get(backendLink + '/home').then(r => {
+            dispatch(setLoading(false));
+            dispatch(setHomeData(r.data))
+            console.log(r.data);
+        }).catch(e => {
+            console.log(e);
+            dispatch(setLoading(false))
+        })
+    }
+}
+
 export const fetchCollections = () => {
     return (dispatch: (e: object) => void) => {
 
@@ -65,7 +81,8 @@ export const fetchGames = () => {
             let arr: string[] = [];
             
             r.data.map((i: any) => {
-                arr.push(i.name)
+                arr.push(i.name);
+                return null
             });
 
             dispatch(setLoading(false));
@@ -91,6 +108,13 @@ export const searchGames = (name: string) => {
             dispatch(setLoading(false));
             console.log(e)
         })
+    }
+};
+
+const setHomeData = (value: Array<object>) => {
+    return{
+        type: actionTypes.SETHOMEDATA,
+        value
     }
 }
 
@@ -175,7 +199,7 @@ const setLoading = (value: boolean) => {
     }
 };
 
-const setCollections = (value: any) => {
+const setCollections = (value: Array<object>) => {
     return{
         type: actionTypes.SETCOLLECTIONS,
         value
