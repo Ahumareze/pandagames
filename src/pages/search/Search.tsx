@@ -14,7 +14,7 @@ import { Loader, Suggestion } from './components';
 import { search } from '../../utilities/links';
 import { useDispatch, useSelector } from 'react-redux';
 import { IRootState } from '../../redux/reducers/mainReducer';
-import { fetchGames } from '../../redux/actions/actions';
+import { fetchGames, searchGames } from '../../redux/actions/actions';
 
 
 function Search() {
@@ -39,7 +39,7 @@ function Search() {
 
         setValue(e);
 
-        if(e){
+        if(e && searchData){
             setShowSearch(true);
             let emptyArr: string[] = [];
             emptyArr = searchData.filter((i: any) => {
@@ -55,6 +55,10 @@ function Search() {
     const updateSuggestion = (e: string) => {
         setValue(e);
         setShowSearch(false)
+    };
+
+    const handleSearch = () => {
+        dispatch(searchGames(value))
     }
 
     let container;
@@ -103,7 +107,7 @@ function Search() {
                         <div className={classes.searchContainer}>
                             <div className={classes.main}>
                                 <input value={value} placeholder='Search Games ...' onChange={(e) => handleInput(e.target.value)} />
-                                <div className={classes.searchButton}>
+                                <div className={classes.searchButton} onClick={handleSearch}>
                                     <FiSearch />
                                 </div>
                             </div>

@@ -3,5 +3,6 @@ export {
     addToCart,
     fetchCartData,
     removeItem,
-    openSideBar
+    openSideBar,
+    searchGames
 } from './actions'

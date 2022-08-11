@@ -79,6 +79,21 @@ export const fetchGames = () => {
     }
 };
 
+export const searchGames = (name: string) => {
+    return(dispatch: (e: object) => void) => {
+        dispatch(setLoading(true));
+
+        axios.post(backendLink + '/search', {name}).then(r => {
+            dispatch(setGames(r.data));
+            console.log(r.data)
+            dispatch(setLoading(false))
+        }).catch(e => {
+            dispatch(setLoading(false));
+            console.log(e)
+        })
+    }
+}
+
 const setSearchData = (value: Array<string>) => {
     return{
         type: actionTypes.SETSEARCHDATA,
