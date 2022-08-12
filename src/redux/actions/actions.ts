@@ -15,7 +15,6 @@ export const fetchHomeData = () => {
         axios.get(backendLink + '/home').then(r => {
             dispatch(setLoading(false));
             dispatch(setHomeData(r.data))
-            console.log(r.data);
         }).catch(e => {
             console.log(e);
             dispatch(setLoading(false))
@@ -46,7 +45,6 @@ export const fetchCollection = (category: string) => {
         axios.post(backendLink + '/collection', {category}).then(r => {
             dispatch(setLoading(false))
             dispatch(setCollection(r.data));
-            console.log(r.data)
         }).catch(e => {
             console.log(e);
             dispatch(setLoading(false))
@@ -62,7 +60,6 @@ export const fetchSelected = (id: string) => {
 
         axios.post(backendLink + '/selected', {id}).then(r => {
             dispatch(setGame(r.data));
-            console.log(r.data)
             dispatch(setLoading(false));
         }).catch(e => {
             console.log(e.response)

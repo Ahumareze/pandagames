@@ -171,4 +171,8 @@ interface CollectionObjectProps{
 export interface CategoryProps{
     name: string,
     data: Array<CollectionObjectProps>
+};
+
+export interface ErrorProps{
+    details: string
 }

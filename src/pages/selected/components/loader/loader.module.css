@@ -77,14 +77,26 @@
     animation: loading 1s linear infinite alternate;
 }
 
-
-
-
 @keyframes loading {
     0%{
         background-color: var(--loader);
     }
     100%{
         background-color: var(--primary);
+    }
+}
+
+@media (max-width: 700px) {
+    .container{
+        display: block;
+    }
+    .container .h2{
+        width: 80%;
+    }
+    .mainImage{
+        height: 250px;
+    }
+    .purchaseDiv{
+        padding-top: 50px;
     }
 }

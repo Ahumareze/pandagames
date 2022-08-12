@@ -39,3 +39,14 @@
     gap: 20px;
     margin-top: 40px;
 }
+
+@media (max-width: 450px) {
+    .addedToCartContainer{
+        padding-right: 15px;
+        padding-left: 15px;
+        box-sizing: border-box;
+    }
+    .addedToCartContainer .mainItem{
+        width: 100%;
+    }
+}
