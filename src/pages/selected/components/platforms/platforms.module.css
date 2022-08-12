@@ -18,10 +18,11 @@
     gap: 10px;
     justify-content: flex-end;
 }
-.icons img{
-    height: 20px;
+.icons .psImg{
+    font-size: 16px;
     color: #fff;
-    opacity: 0.5;
+    opacity: 0.7;
+    font-family: var(--play);
 }
 .icons img:hover{
     opacity: 0.8;

@@ -43,7 +43,7 @@ export interface GameProps{
     title: string,
     image: string,
     prices: Array<object>,
-    id: number
+    id: string
 }
 
 export interface CollectionItemProps{
@@ -57,7 +57,8 @@ export interface CollectionItemProps{
 export interface BannerProps{
     image: string,
     title: string,
-    details: string
+    details: string,
+    link: string
 };
 
 export interface ButtonProps{
@@ -97,8 +98,13 @@ export interface StarsProps{
     rated: boolean
 };
 
+interface platformProps{
+    name: string,
+    pricr: number
+}
+
 export interface platformsProps{
-    platforms: Array<string>
+    platforms: Array<platformProps>
 }
 
 export interface PurchaseSummaryProps{
@@ -153,4 +159,16 @@ export interface AddedToCartProps{
 export interface SearchSuggestionProps{
     name: string,
     onSelect: () => void
+};
+
+interface CollectionObjectProps{
+    name: string,
+    images: Array<string>,
+    _id: string,
+    prices: Array<object>
+};
+
+export interface CategoryProps{
+    name: string,
+    data: Array<CollectionObjectProps>
 }

@@ -59,7 +59,9 @@
     width: fit-content;
     margin: 0;
     color: #fff;
-    opacity: 0.5;
+    opacity: 0.7;
+    font-family: var(--play);
+    letter-spacing: 1.5px;
 }
 .platforms .xboxImg{
     width: 20px;
@@ -69,12 +71,11 @@
 @media (max-width: 530px) {
     .container{
         padding: 0;
+        border-radius: 0;
+        margin-bottom: 15px;
     }
     .container .mainImage{
         height: 110px;
-    }
-    .platforms{
-        display: none;
     }
     .extraTags{
         display: block;

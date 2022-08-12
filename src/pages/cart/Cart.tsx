@@ -43,12 +43,12 @@ function Cart() {
                     <div className={classes.gamesContainer}>
                         {cartData.map((i: any, idx: number) => (
                             <Item
-                                title={i.title} 
+                                title={i.name} 
                                 price={i.mainPrice} 
-                                image={i.image}
+                                image={i.images[0]}
                                 id={i.id}
                                 onDelete={() =>dispatch(removeItem(idx))}
-                                key={i.id}
+                                key={i._id}
                             />
                         ))}
                     </div>

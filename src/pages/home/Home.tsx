@@ -27,10 +27,6 @@ function Home() {
     const homeData = useSelector((state: IRootState) => state.homeData);
 
     useEffect(() => {
-        console.log(homeData)
-    }, [homeData])
-
-    useEffect(() => {
         dispatch(fetchHomeData())
     }, [dispatch]);
 
@@ -38,9 +34,9 @@ function Home() {
     if(homeData){
         container = (
             <>
-                <Collections collections={homeData.collections.splice(0,4)} />
-                <Categories />
-                <Categories />
+                <Collections collections={homeData.collections} />
+                <Categories name={'Newest 🔥'} data={homeData.new} />
+                <Categories name={'Recommended 🏆'} data={homeData.recomended}/>
             </>
         )
     }

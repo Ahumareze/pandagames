@@ -7,31 +7,16 @@ import classes from './platforms.module.css';
 import { platformsProps } from '../../../../types';
 
 interface PlatformProps{
-    value: string
+    value: any
 }
 
 const Platform:FC<PlatformProps> = ({value}):JSX.Element => {
-
-    let container;
-
-    // if(value === 'ps4'){
-    //     container = <img src={ps4} alt='' /> 
-    // }else if(value === 'macos'){
-    //     container = <img src={macos} alt='' />
-    // }else if(value === 'windows'){
-    //     container = <img src={windows} alt='' />
-    // };
-
     return(
-        <>
-            {container}
-        </>
+        <p className={classes.psImg}>{value.name}</p>
     )
 }
 
 const Platforms:FC<platformsProps> = ({platforms}):JSX.Element => {
-    
-    // console.log(platforms)
 
     return (
         <div className={classes.container}>

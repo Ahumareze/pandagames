@@ -1,4 +1,5 @@
 import React, { FC, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 //types
 import { BannerProps } from '../../../../types';
@@ -6,7 +7,11 @@ import { BannerProps } from '../../../../types';
 //styles
 import classes from './collections.module.css';
 
-const Banner:FC<BannerProps> = ({title, image, details}) => {
+const Banner:FC<BannerProps> = ({title, image, details, link}) => {
+    //initialize
+    const navigate = useNavigate();
+
+    //local state
     const [animate, setAnimate] = useState<boolean>(true);
 
     useEffect(() => {
@@ -26,7 +31,7 @@ const Banner:FC<BannerProps> = ({title, image, details}) => {
                 <div className={classes.main}>
                     <h2>{title}</h2>
                     <p>{details}</p>
-                    <div className={classes.button}>Browse collection</div>
+                    <div className={classes.button}  onClick={() => navigate('/collections' + link)}>Browse collection</div>
                 </div>
             </div>
         </div>

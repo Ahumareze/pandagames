@@ -11,7 +11,7 @@ const Item:FC<CollectionItemProps> = ({name, image, id, onClick, active}) => {
         <div className={`${classes.Item} ${active && classes.activeItem }`} onClick={() => onClick(id)}>
             <div style={{backgroundImage: `url(${image})`}} className={classes.itemImage} />
             <div className={classes.itemTextContainer} style={active ? {opacity: 0.9} : {}}>
-                {name}
+                {name} Games
             </div>
         </div>
     );

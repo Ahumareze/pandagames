@@ -1,25 +1,29 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 //icons
 import { FiChevronRight } from 'react-icons/fi';
 
 //components
 import { Game } from '../../../../components';
+import { useNavigate } from 'react-router-dom';
 
 //styles
 import classes from './categories.module.css';
 
-//data
-import games from '../../../../assets/data/games';
+//types
+import { CategoryProps } from '../../../../types';
 
 
-function Categories() {
+const Categories:FC<CategoryProps> = ({name, data}):JSX.Element => {
+    //initialize
+    const navigate = useNavigate();
+
     return (
         <div className={classes.container}>
             <div className={classes.header}>
-                <p className={classes.title}>Trending 🔥</p>
+                <p className={classes.title}>{name}</p>
                 <div className={classes.showAll}>
-                    <div>
+                    <div onClick={() => navigate('/collections')}>
                         <p>Show all</p>
                         <FiChevronRight size={18} />
                     </div>
@@ -27,13 +31,13 @@ function Categories() {
             </div>
 
             <div className={classes.gamesContainer}>
-                {games.map((i, idx) => (
+                {data?.map((i, idx) => (
                     <Game
-                        title={i.title}
-                        image={i.image}
+                        title={i.name}
+                        image={i.images[0]}
                         prices={i.prices}
                         key={idx}
-                        id={i.id}
+                        id={i._id}
                     />
                 ))}
             </div>

@@ -30,14 +30,6 @@ const Collections:FC<CollectionsProps> = ({collections}):JSX.Element => {
         setActive(collections[0])
     }, []);
 
-    useEffect(() => {
-        console.log(collections)
-    }, [collections])
-
-    useEffect(() => {
-        console.log(selected)
-    }, [selected]);
-
     const updateBanner = (e: number) => {
         setActive(collections[e]);
         setSelected(e)
@@ -56,7 +48,7 @@ const Collections:FC<CollectionsProps> = ({collections}):JSX.Element => {
     return (
         <div className={classes.container}>
             <div>
-                <Banner title={active?.title} image={active?.image} details={active?.details} />
+                <Banner title={active?.title} image={active?.image} details={active?.details} link={active?.link} />
                 <Stats />
             </div>
             <div className={classes.linksContainer}>

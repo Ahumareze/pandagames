@@ -8,6 +8,7 @@
     margin-right: auto;
     margin-left: auto;
     margin-top: 60px;
+    padding-bottom: 100px;
 }
 @media (max-width: 1200px) {
     .section {
@@ -15,6 +16,7 @@
         margin-right: none;
         margin-left: none;
         padding: 0 15px;
+        padding-bottom: 100px;
         box-sizing: border-box;
         margin-top: 20px;
     }
