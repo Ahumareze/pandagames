@@ -59,11 +59,7 @@ function Cart() {
             </section>
         )
     }else{
-        container = (
-            <section className={classes.section}>
-                <Error details={'Empty Cart'} />
-            </section>
-        )
+        container = <Error details={'Empty Cart'} />
     }
     
     return (
