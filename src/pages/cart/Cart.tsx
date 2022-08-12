@@ -59,7 +59,7 @@ function Cart() {
             </section>
         )
     }else{
-        container = <Error details={'Empty Cart'} />
+        container = <Error title={'Empty Cart'} details={'Please add items to cart then proceed to checkout'} />
     }
     
     return (

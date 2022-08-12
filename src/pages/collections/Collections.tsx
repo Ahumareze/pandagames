@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 import classes from './collections.module.css';
 
 //components
-import { Background, Header } from '../../components';
+import { Background, Error, Header } from '../../components';
 
 //utilities
 import { collectionsLink } from '../../utilities/links';
@@ -23,7 +23,7 @@ function Collections() {
     //state
     const loading = useSelector((state: IRootState) => state.loading);
     const collections = useSelector((state: IRootState) => state.collections);
-    const fetchError = useSelector((state: IRootState) => state.fetchError);
+    const errorMessage = useSelector((state: IRootState) => state.errorMessage);
 
     //fetch collections with redux
     useEffect(() => {
@@ -32,13 +32,7 @@ function Collections() {
 
     let container;
 
-    if(fetchError){
-        container = (
-            <section>
-                <h1>Error fetching data</h1>
-            </section>
-        )
-    }else{
+    if(collections){
         container = (
             <section className={classes.section}>
                 <div  className={classes.intro}>
@@ -58,6 +52,8 @@ function Collections() {
                 </div>
             </section>
         )
+    }else if(errorMessage){
+        container = (<Error title='Error Fetching Collections' details='Check your internet connection and reload page' />)
     };
 
     const loader = (

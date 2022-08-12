@@ -21,7 +21,7 @@
 .intro{
     text-align: center;
     color: #fff;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--poppins);
 }
 .intro h1{
     font-size: 30px;

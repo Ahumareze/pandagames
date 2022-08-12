@@ -26,13 +26,14 @@ export const fetchCollections = () => {
     return (dispatch: (e: object) => void) => {
 
         dispatch(setLoading(true));
+        dispatch(setErrorMessage(null));
 
         axios.get(backendLink + '/collections').then(r => {
             dispatch(setLoading(false));
             dispatch(setCollections(r.data));
         }).catch(e => {
             dispatch(setLoading(false));
-            dispatch(setFetchError(true));
+            dispatch(setErrorMessage('error'));
         })
     }
 };
@@ -203,9 +204,9 @@ const setCollections = (value: Array<object>) => {
     }
 };
 
-const setFetchError = (value: any) => {
+const setErrorMessage = (value: any) => {
     return{
-        type: actionTypes.SETFETCHERROR,
+        type: actionTypes.SETERRORMESSAGE,
         value
     }
 }

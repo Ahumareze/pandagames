@@ -5,7 +5,7 @@ const initialState = {
     collections: null,
     collection: null,
     games: null,
-    fetchError: false,
+    errorMessage: null,
     selectedGame: null,
     cartData: null,
     openSideBar: false,
@@ -21,8 +21,8 @@ const reducer = (state = initialState, action: any) =>{
             return {...state, loading: action.value};
         case(actionTypes.SETCOLLECTIONS):
             return {...state, collections: action.value};
-        case(actionTypes.SETFETCHERROR):
-            return {...state, fetchError: action.value};
+        case(actionTypes.SETERRORMESSAGE):
+            return {...state, errorMessage: action.value};
         case(actionTypes.SETGAME):
             return {...state, selectedGame: action.value};
         case(actionTypes.SETCARTDATA):

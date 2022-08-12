@@ -174,5 +174,6 @@ export interface CategoryProps{
 };
 
 export interface ErrorProps{
+    title: string,
     details: string
 }
