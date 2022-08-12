@@ -7,7 +7,7 @@ import classes from './cart.module.css';
 import { cart } from '../../utilities/links';
 
 //components
-import { Background, Header, PurchaseSummary } from '../../components';
+import { Background, Header, PurchaseSummary, Error } from '../../components';
 import { Item } from './components';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -48,7 +48,7 @@ function Cart() {
                                 image={i.images[0]}
                                 id={i.id}
                                 onDelete={() =>dispatch(removeItem(idx))}
-                                key={i._id}
+                                key={i.idx}
                             />
                         ))}
                     </div>
@@ -61,7 +61,7 @@ function Cart() {
     }else{
         container = (
             <section className={classes.section}>
-                <p>Empty cart</p>
+                <Error details={'Empty Cart'} />
             </section>
         )
     }
