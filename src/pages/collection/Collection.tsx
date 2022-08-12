@@ -36,7 +36,7 @@ function Collection() {
     }, [id, dispatch]);
 
     const  container = (
-        <section>
+        <section className={classes.section}>
             <h2>{id} games</h2>
             <div className={classes.collectionContainer}>
             {collection?.map((i: any, idx: number) => (
@@ -53,7 +53,7 @@ function Collection() {
     );
 
     const loader = (
-        <section>
+        <section className={classes.section}>
             <Loader />
         </section>
     )
