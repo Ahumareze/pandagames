@@ -10,14 +10,15 @@ import { GameProps } from '../../types';
 export const fetchHomeData = () => {
     return (dispatch: (e: object) => void) => {
 
-        dispatch(setLoading(true))
+        dispatch(setLoading(true));
+        dispatch(setErrorMessage(false));
 
         axios.get(backendLink + '/home').then(r => {
             dispatch(setLoading(false));
             dispatch(setHomeData(r.data))
         }).catch(e => {
-            console.log(e);
-            dispatch(setLoading(false))
+            dispatch(setLoading(false));
+            dispatch(setErrorMessage(true));
         })
     }
 }
@@ -26,14 +27,14 @@ export const fetchCollections = () => {
     return (dispatch: (e: object) => void) => {
 
         dispatch(setLoading(true));
-        dispatch(setErrorMessage(null));
+        dispatch(setErrorMessage(false));
 
         axios.get(backendLink + '/collections').then(r => {
             dispatch(setLoading(false));
             dispatch(setCollections(r.data));
         }).catch(e => {
             dispatch(setLoading(false));
-            dispatch(setErrorMessage('error'));
+            dispatch(setErrorMessage(true));
         })
     }
 };
@@ -63,7 +64,6 @@ export const fetchSelected = (id: string) => {
             dispatch(setGame(r.data));
             dispatch(setLoading(false));
         }).catch(e => {
-            console.log(e.response)
             dispatch(setLoading(false));
         })
 
@@ -73,7 +73,7 @@ export const fetchSelected = (id: string) => {
 export const fetchGames = () => {
     return(dispatch: (e: object) => void) => {
         dispatch(setLoading(true));
-        console.log('hello')
+        dispatch(setErrorMessage(false));
 
         axios.get(backendLink + '/games').then(r => {
             let arr: string[] = [];
@@ -89,7 +89,7 @@ export const fetchGames = () => {
             
         }).catch(e => {
             dispatch(setLoading(false));
-            console.log(e)
+            dispatch(setErrorMessage(true));
         })
     }
 };
@@ -100,11 +100,9 @@ export const searchGames = (name: string) => {
 
         axios.post(backendLink + '/search', {name}).then(r => {
             dispatch(setGames(r.data));
-            console.log(r.data)
             dispatch(setLoading(false))
         }).catch(e => {
             dispatch(setLoading(false));
-            console.log(e)
         })
     }
 };
@@ -204,7 +202,7 @@ const setCollections = (value: Array<object>) => {
     }
 };
 
-const setErrorMessage = (value: any) => {
+const setErrorMessage = (value: boolean) => {
     return{
         type: actionTypes.SETERRORMESSAGE,
         value

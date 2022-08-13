@@ -5,7 +5,7 @@ const initialState = {
     collections: null,
     collection: null,
     games: null,
-    errorMessage: null,
+    errorMessage: false,
     selectedGame: null,
     cartData: null,
     openSideBar: false,

@@ -7,7 +7,7 @@ import { FiSearch } from 'react-icons/fi';
 import classes from './search.module.css';
 
 //components
-import { Background, Game, Header } from '../../components';
+import { Background, Error, Game, Header } from '../../components';
 import { Loader, Suggestion } from './components';
 
 //utilities
@@ -25,6 +25,7 @@ function Search() {
     const searchData = useSelector((state: IRootState) => state.searchData);
     const loading = useSelector((state: IRootState) => state.loading);
     const games = useSelector((state: IRootState) => state.games);
+    const errorMessage = useSelector((state: IRootState) => state.errorMessage);
 
     //local state
     const [showSearch, setShowSearch] = useState<boolean>();
@@ -33,7 +34,11 @@ function Search() {
 
     useEffect(() => {
         dispatch(fetchGames());
-    }, [dispatch])
+    }, [dispatch]);
+
+    useEffect(() => {
+        console.log(games)
+    }, [games])
 
     const handleInput = (e: string) => {
 
@@ -79,19 +84,25 @@ function Search() {
 
     let gamesContainer;
     if(games){
-        gamesContainer = (
-            <div className={classes.gamesContainer}>
-                {games.map((i: any, idx: number) => (
-                    <Game
-                        title={i.name}
-                        image={i.images[0]}
-                        prices={i.prices}
-                        key={idx}
-                        id={i._id}
-                    />
-                ))}
-            </div>
-        )
+        if(games.length > 0){
+            gamesContainer = (
+                <div className={classes.gamesContainer}>
+                    {games.map((i: any, idx: number) => (
+                        <Game
+                            title={i.name}
+                            image={i.images[0]}
+                            prices={i.prices}
+                            key={idx}
+                            id={i._id}
+                        />
+                    ))}
+                </div>
+            )
+        }else{
+            gamesContainer = <Error title={'Game Not Found'} details={'No Item matches your search, try a different search'} />
+        }
+    }else if(errorMessage){
+        gamesContainer = <Error title={'Network Error'} details={'Check your internet connection and reload page'} />
     }
 
     return (

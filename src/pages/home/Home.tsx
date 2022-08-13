@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 import classes from './home.module.css';
 
 //components
-import { Background, Header } from '../../components';
+import { Background, Header, Error } from '../../components';
 import Collections from './components/collections/Collections';
 import Categories from './components/categories/Categories';
 import Loader from './components/loader/Loader';
@@ -25,6 +25,7 @@ function Home() {
     //redux state
     const loading = useSelector((state: IRootState) => state.loading);
     const homeData = useSelector((state: IRootState) => state.homeData);
+    const errorMessage = useSelector((state: IRootState) => state.errorMessage);
 
     useEffect(() => {
         dispatch(fetchHomeData())
@@ -39,6 +40,8 @@ function Home() {
                 <Categories name={'Recommended 🏆'} data={homeData.recomended}/>
             </>
         )
+    }else  if(errorMessage){
+        container = <Error title={'Network Error'} details={'Check your internet connection and reload page'} />
     }
 
     return (
