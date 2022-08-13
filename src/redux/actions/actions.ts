@@ -42,14 +42,15 @@ export const fetchCollections = () => {
 export const fetchCollection = (category: string) => {
     return (dispatch: (e: object) => void) => {
 
-        dispatch(setLoading(true))
+        dispatch(setLoading(true));
+        dispatch(setErrorMessage(false));
 
         axios.post(backendLink + '/collection', {category}).then(r => {
             dispatch(setLoading(false))
             dispatch(setCollection(r.data));
         }).catch(e => {
-            console.log(e);
-            dispatch(setLoading(false))
+            dispatch(setLoading(false));
+            dispatch(setErrorMessage(true));
         });
 
     }
