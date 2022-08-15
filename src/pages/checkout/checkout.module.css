@@ -141,6 +141,15 @@
         background-color: var(--secondary);
     }
 }
+.nextContainer{
+    height: 40px;
+    width: 200px;
+    background-color: red;
+    display: flex;
+    flex-direction: row;
+}
+
+/********  responsive design  ***************/
 @media (max-width: 900px) {
     .section{
         display: block;

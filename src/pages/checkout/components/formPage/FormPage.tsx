@@ -1,4 +1,5 @@
 import React, { FC, useState } from 'react';
+import { FiChevronRight } from 'react-icons/fi';
 import location from '../../../../assets/data/locations';
 
 //types
@@ -87,6 +88,7 @@ function FormPage() {
                     <Input title={'Address Line'} onChange={(e) => setAddress(e)}/>
                 </div>
             </div>
+            <div className={classes.nextContainer}> <p>Payment</p> <FiChevronRight /> </div>
         </div>
     );
 }
