@@ -3,7 +3,7 @@ import { FiChevronRight } from 'react-icons/fi';
 import location from '../../../../assets/data/locations';
 
 //types
-import { InputProps, SelectCityInputProps, SelectInputProps } from '../../../../types';
+import { CheckoutFormPageProps, InputProps, SelectCityInputProps, SelectInputProps } from '../../../../types';
 
 //styles
 import classes from '../../checkout.module.css';
@@ -18,6 +18,7 @@ const Input:FC<InputProps> = ({title, onChange}):JSX.Element => {
 };
 
 const SelectInput:FC<SelectInputProps> = ({title, onChange}):JSX.Element => {
+    
     return(
         <div className={classes.input}>
             <p className={classes.name}>{title}</p>
@@ -36,14 +37,14 @@ const SelectCity:FC<SelectCityInputProps> = ({title, data, onChange}) => {
             <p className={classes.name}>{title}</p>
             <select onChange={(e) => onChange(e.target.value)}>
                 {data.map((i: any, idx: number) => (
-                    <option key={idx} value={idx}>{i}</option>
+                    <option key={idx} value={i}>{i}</option>
                 ))}
             </select>
         </div>
     )
 }
 
-function FormPage() {
+const FormPage:FC<CheckoutFormPageProps> = ({onNext}):JSX.Element => {
     //local state
     const [countries, setCountries] = useState<Array<string>>(location[0].states)
 
@@ -57,7 +58,7 @@ function FormPage() {
     const handleUpdate = (e: string) => {
         const value = JSON.parse(e);
         setCountries(location[value].states);
-        setCountry(e);
+        setCountry(location[value].name);
     };
 
     const handleSubmit = () => {
@@ -69,10 +70,10 @@ function FormPage() {
             city
         };
 
-        console.log(data)
+        onNext(data);
     }
 
-    handleSubmit();
+    
 
     return (
         <div className={classes.formContainer}>
@@ -88,7 +89,7 @@ function FormPage() {
                     <Input title={'Address Line'} onChange={(e) => setAddress(e)}/>
                 </div>
             </div>
-            <div className={classes.nextContainer}> <p>Payment</p> <FiChevronRight /> </div>
+            <div className={classes.nextContainer} onClick={() => handleSubmit()}> <p>Payment</p> <FiChevronRight size={20} /> </div>
         </div>
     );
 }

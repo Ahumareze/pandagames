@@ -9,9 +9,16 @@ import Navigation from './components/navigation/Navigation';
 import FormPage from './components/formPage/FormPage';
 import PaymentPage from './components/paymentPage/PaymentPage';
 
+//types
+import { FormProps } from '../../types';
+
 function Checkout() {
     //local state
     const [showPaymentPage, setShowPaymentPage] = useState(false);
+
+    const handleNext = (e: FormProps) => {
+        console.log(e)
+    }
 
     return (
         <Background bubbles={false} explore={false}>
@@ -20,7 +27,7 @@ function Checkout() {
                 <section className={classes.section}>
                     <div className={classes.main}>
                         <Navigation activeLink={showPaymentPage} onClick={(e) => setShowPaymentPage(e)} />
-                        {showPaymentPage ? <PaymentPage /> : <FormPage />}
+                        {showPaymentPage ? <PaymentPage /> : <FormPage onNext={(e) => handleNext(e)} />}
                     </div>
                     <PurchaseSummary onClick={() => console.log('')} />
                 </section>

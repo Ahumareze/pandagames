@@ -182,4 +182,16 @@ export interface CategoryProps{
 export interface ErrorProps{
     title: string,
     details: string
+};
+
+export interface FormProps{
+    firstname: string,
+    lastname: string,
+    country: string,
+    city: string,
+    address: string
 }
+
+export interface CheckoutFormPageProps{
+    onNext: (e: FormProps) => void
+};
