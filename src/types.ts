@@ -66,10 +66,16 @@ export interface ButtonProps{
     onClick: () => void
 };
 
+interface pricesObjectProps{
+    name: string,
+    price: number
+}
+
 export interface CartItemProps{
     title: string,
     image: string,
     price: number,
+    prices: Array<pricesObjectProps>,
     id: string,
     onDelete: () => void
 };

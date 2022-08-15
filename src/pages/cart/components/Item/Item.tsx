@@ -13,13 +13,13 @@ import { FiX } from 'react-icons/fi';
 import { useNavigate } from 'react-router-dom';
 
 
-const Item:FC<CartItemProps> = ({title, image, price, id, onDelete}):JSX.Element => {
+const Item:FC<CartItemProps> = ({title, image, price, id, onDelete, prices}):JSX.Element => {
     //initialize
     const navigate = useNavigate();
     
     const handleNavigate = () => {
         navigate('/games/' + id)
-    }
+    };
 
     return (
         <div className={classes.container}>
@@ -31,9 +31,9 @@ const Item:FC<CartItemProps> = ({title, image, price, id, onDelete}):JSX.Element
                     <p>N{price.toLocaleString()}</p>
                 </div>
                 <div className={classes.platforms}>
-                    {/* <img alt='' src={ps4} />
-                    <img alt='' src={macos} />
-                    <img alt='' src={windows} /> */}
+                    {prices.map(i => (
+                        <p>{i.name}</p>
+                    ))}
                 </div>
             </div>
 

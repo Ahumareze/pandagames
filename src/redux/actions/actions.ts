@@ -151,7 +151,7 @@ export const fetchCartData = () => {
     return (dispatch: (e: object) => void) => {
         const localData = localStorage.getItem(cartName);
         if(localData){
-            dispatch(setCartData(JSON.parse(localData)))
+            dispatch(setCartData(JSON.parse(localData)));
         }
     }
 };

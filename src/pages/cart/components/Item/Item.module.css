@@ -46,14 +46,14 @@
     flex-direction: row;
     gap: 10px;
 }
-.platforms img{
-    height: 17px;
+.platforms p{
+    font-size: 14px;
+    font-family: var(--play);
     color: #fff;
     opacity: 0.6;
+    margin: 0;
 }
-.platforms img:hover{
-    opacity: 0.8;
-}
+
 .delete{
     height: 30px;
     width: 30px;

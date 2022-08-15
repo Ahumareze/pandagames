@@ -47,6 +47,7 @@ function Cart() {
                                 price={i.mainPrice} 
                                 image={i.images[0]}
                                 id={i.id}
+                                prices={i.prices}
                                 onDelete={() =>dispatch(removeItem(idx))}
                                 key={i.idx}
                             />
