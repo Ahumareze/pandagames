@@ -17,7 +17,11 @@ function Checkout() {
     const [showPaymentPage, setShowPaymentPage] = useState(false);
 
     const handleNext = (e: FormProps) => {
-        console.log(e)
+        if(e.address.length > 0 && e.city.length > 0 && e.country.length > 0 && e.firstname.length > 0 && e.lastname.length > 0){
+            setShowPaymentPage(true)
+        }else{
+            console.log('error and stuffs')
+        }
     }
 
     return (
