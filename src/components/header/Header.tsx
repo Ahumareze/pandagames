@@ -61,7 +61,7 @@ const Header:FC<HeaderProps> = ({active}):JSX.Element => {
 
     const largeHeader = (
         <div className={classes.container}>
-            <div className={classes.logoContainer}>PandaGames</div>
+            <div className={classes.logoContainer} onClick={() => handleNavigation('/')}>PandaGames</div>
             <div className={classes.secondContainer}>
                 
                 <div 
