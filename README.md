@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Guide to getting Panda Games up and running locally
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created as a portfolio project
 
 ## Available Scripts
 
