@@ -14,8 +14,19 @@ export const fetchHomeData = () => {
         dispatch(setErrorMessage(false));
 
         axios.get(backendLink + '/home').then(r => {
+            let newArr: any[] = [];
+            let recomendedArr: any[] = [];
+
+            r.data.new.map((i: Array<object>) => newArr.unshift(i));
+
+            const data = {
+                ...r.data,
+                new: newArr,
+            }
+
+
             dispatch(setLoading(false));
-            dispatch(setHomeData(r.data))
+            dispatch(setHomeData(data));
         }).catch(e => {
             dispatch(setLoading(false));
             dispatch(setErrorMessage(true));
@@ -85,7 +96,7 @@ export const fetchGames = () => {
             });
 
             dispatch(setLoading(false));
-            dispatch(setGames(r.data));
+            dispatch(setGames(r.data.splice(0, 8)));
             dispatch(setSearchData(arr));
             
         }).catch(e => {

@@ -37,8 +37,9 @@
 }
 .gamesContainer{
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 15px;
 }
 @media (max-width: 530px) {
