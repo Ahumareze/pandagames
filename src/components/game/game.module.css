@@ -8,7 +8,6 @@
     padding-bottom: 15px;
     border-radius: 13px;
     max-width: 250px;
-    min-width: 200px;
 }
 .container:hover{
     animation: scaleUp 0.5s ease forwards;
