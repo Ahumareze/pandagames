@@ -15,7 +15,6 @@ export const fetchHomeData = () => {
 
         axios.get(backendLink + '/home').then(r => {
             let newArr: any[] = [];
-            let recomendedArr: any[] = [];
 
             r.data.new.map((i: Array<object>) => newArr.unshift(i));
 
