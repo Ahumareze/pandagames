@@ -117,6 +117,15 @@
     display: grid;
     grid-template-columns: 100px 1fr;
 }
+.miniLogoContainer{
+    color: rgba(255, 255, 255, 0.918);
+    font-size: 18px;
+    font-weight: 900;
+    -webkit-text-stroke: 1px blueviolet;
+    cursor: pointer;
+    display: grid;
+    align-items: center;
+}
 .miniHeaderComponents{
     height: 100%;
     width: 100%;

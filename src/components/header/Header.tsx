@@ -42,8 +42,8 @@ const Header:FC<HeaderProps> = ({active}):JSX.Element => {
 
     const miniHeader = (
         <div className={classes.miniHeader}>
-            <div className={classes.miniLogoContainer}>
-
+            <div className={classes.miniLogoContainer} onClick={() => handleNavigation('/')}>
+                PandaGames
             </div>
             <div className={classes.miniHeaderComponents}>
                 <div onClick={() => handleNavigation('/search')}>
